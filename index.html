@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0d0b">
+<meta name="description" content="Lakeview Mechanical field team hub — job tickets, schedule, team chat and company links.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310120d'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Arial,sans-serif' font-size='30' font-weight='900' fill='%23bac64a'%3ELM%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Team Hub">
+<title>Lakeview Mechanical — Team Hub</title>
+<style>
+:root{--bg:#090b09;--panel:#121512;--panel2:#171b17;--line:#2b302a;--text:#f3f3ed;--muted:#a7aba1;--olive:#9aa52d;--olive2:#bac64a;--max:1100px;--radius:18px}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 75% 0%,#1a2016 0,#0b0d0b 35%,#070807 100%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;background-image:linear-gradient(115deg,transparent 0 48%,#fff 49%,transparent 50%),linear-gradient(25deg,transparent 0 48%,#fff 49%,transparent 50%);background-size:120px 120px;mix-blend-mode:screen}
+a{color:inherit;text-decoration:none}.shell{display:flex;min-height:100vh}.sidebar{width:250px;background:rgba(9,11,9,.96);border-right:1px solid var(--line);padding:28px 18px;display:flex;flex-direction:column;position:fixed;inset:0 auto 0 0;z-index:10}.brand{padding:2px 0 26px;margin:0 -18px 24px;border-bottom:1px solid var(--line)}.brand img{width:100%;height:auto;display:block}.hub-label{text-align:right;color:var(--olive2);font-size:12px;font-weight:800;letter-spacing:.18em;margin-top:2px;padding-right:18px}.nav{display:grid;gap:8px}.nav a{display:flex;align-items:center;gap:14px;padding:15px 14px;border-radius:12px;color:#ddd;font-weight:700;letter-spacing:.03em}.nav a:hover,.nav a.active{background:linear-gradient(90deg,#4d551c,#252a17);color:#fff}.icon{width:24px;text-align:center;font-size:20px}.side-note{margin-top:auto;padding:22px 12px 8px;color:#d8d9d2;font-weight:800;line-height:1.25}.side-note span{color:var(--olive2)}
+.main{margin-left:250px;width:calc(100% - 250px);padding:22px 28px 40px}.topbar{max-width:var(--max);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:6px 0 18px}.mobile-brand{display:none}.meta{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:14px}.meta strong{color:#fff;font-size:18px}.eyebrow{color:var(--olive2);font-size:13px;font-weight:900;letter-spacing:.14em}.hero-title{max-width:var(--max);margin:0 auto 20px}.hero-title h1{font-size:clamp(30px,4vw,48px);margin:2px 0 0;letter-spacing:-.03em;line-height:1}.hero-title p{color:var(--muted);margin:9px 0 0;font-size:15px}
+.card{max-width:var(--max);margin:0 auto 18px;background:linear-gradient(145deg,rgba(25,29,24,.98),rgba(12,14,12,.98));border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 16px 40px rgba(0,0,0,.28);overflow:hidden}.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px 14px}.card-head h2{margin:0;font-size:16px;letter-spacing:.12em;color:var(--olive2)}.muted{color:var(--muted)}
+.subhead{padding:2px 20px 8px;color:var(--muted);font-size:12px;letter-spacing:.16em;font-weight:800}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 18px;background:var(--olive);color:#10120d;border-radius:10px;font-weight:900;letter-spacing:.03em;min-height:48px}.btn:hover{background:var(--olive2)}.btn.small{padding:9px 14px;min-height:40px;font-size:13px}.btn.secondary{background:#1d211b;color:#eee;border:1px solid #3a4034}.btn.secondary:hover{background:#2a3023}.btn.ghost{background:rgba(16,18,13,.72);color:#fff;border:1px solid var(--olive)}.btn.ghost:hover{background:rgba(60,66,28,.8)}
+.job-media{position:relative;min-height:250px;display:flex;align-items:flex-end;padding:22px;margin:0 18px;border-radius:14px;overflow:hidden;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.82)),url('sewer-dig-layout-draftsmen.jpeg') center/cover}.job-media:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(10,12,10,.2),rgba(10,12,10,.55))}.job-copy{position:relative;z-index:1;width:100%}.job-code{font-size:clamp(22px,2.6vw,34px);font-weight:900;letter-spacing:-.03em}.job-sub{color:#d2d4cd;margin:5px 0 14px}.job-actions{display:flex;gap:10px;flex-wrap:wrap}
+.chips{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px 18px 8px}.chips a{display:flex;align-items:center;gap:10px;padding:14px;border:1px solid var(--line);border-radius:12px;background:#0e110e;font-weight:700;min-height:54px;transition:.15s}.chips a:hover{border-color:#606a29;transform:translateY(-1px)}.chips .ci{font-size:19px;width:24px;text-align:center}
+.pastjobs{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 18px 18px;padding:15px 16px;border:1px dashed #3a4034;border-radius:12px;color:var(--muted)}.pastjobs b{color:#e8e9e2}
+.calendar-wrap{padding:0 18px 18px}.calendar-frame{width:100%;height:560px;border:1px solid var(--line);border-radius:14px;background:#fff}.calendar-frame iframe{width:100%;height:100%;border:0;border-radius:14px}.cal-foot{display:flex;justify-content:flex-end;padding:10px 2px 0}.cal-foot a{color:var(--muted);font-size:13px;font-weight:700}.cal-foot a:hover{color:var(--olive2)}
+.chat-body{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:4px 20px 20px}.chat-body p{margin:0;color:var(--muted);max-width:560px;line-height:1.55}.chat-body p b{color:#e8e9e2}
+.link-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:0 18px 14px}.link-grid a{padding:16px;border:1px solid var(--line);border-radius:12px;background:#0d100d;min-height:54px}.link-grid a:hover{border-color:#606a29}.link-grid b{display:block}.link-grid span{font-size:12px;color:var(--muted)}
+.qr-card{display:flex;gap:18px;align-items:center;background:#fff;color:#10120d;border-radius:14px;padding:16px 18px;margin:4px 18px 18px}.qr-card img{width:132px;height:132px;flex:none}.qr-card b{display:block;font-size:17px;margin-bottom:4px}.qr-card p{margin:0;font-size:14px;color:#3a3d35;line-height:1.5}
+.footer{max-width:var(--max);margin:26px auto 0;color:#72776d;font-size:12px;text-align:center;line-height:1.7}.footer a{color:#9aa08f}.footer a:hover{color:var(--olive2)}
+.mobile-nav{display:none}
+section[id],main[id]{scroll-margin-top:16px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--olive2);outline-offset:2px;border-radius:6px}
+@media(max-width:1000px){.sidebar{width:215px}.main{margin-left:215px;width:calc(100% - 215px);padding:18px}.chips{grid-template-columns:repeat(2,1fr)}.calendar-frame{height:520px}.meta{display:none}}
+@media(max-width:700px){body{padding-bottom:92px}.sidebar{display:none}.main{margin-left:0;width:100%;padding:12px 12px 24px}.topbar{padding:5px 2px 12px}.mobile-brand{display:flex;align-items:center;gap:10px}.mobile-brand img{width:205px}.meta{display:flex;gap:0}.meta div:first-child{display:none}.meta strong{font-size:15px}.hero-title{padding:0 4px 10px;margin-bottom:2px}.hero-title h1{font-size:26px}.hero-title p{font-size:13px;margin-top:5px}.job-media{min-height:215px;padding:15px;margin:0 12px}.job-code{font-size:23px}.job-sub{margin:4px 0 12px}.job-actions{width:100%}.job-actions a{flex:1;padding:13px 8px}.card-head{padding:15px 14px 10px}.subhead{padding:2px 14px 6px}.chips{grid-template-columns:repeat(2,1fr);padding:12px 12px 6px}.chips a{padding:12px 10px;min-height:50px}.pastjobs{margin:10px 12px 14px;flex-wrap:wrap}.calendar-wrap{padding:0 10px 10px}.calendar-frame{height:500px}.chat-body{padding:2px 14px 16px}.link-grid{grid-template-columns:1fr;padding:0 10px 10px}.qr-card{margin:4px 10px 14px}.qr-card img{width:112px;height:112px}.btn{padding:12px 15px}.footer{padding:0 12px}
+.mobile-nav{position:fixed;display:grid;grid-template-columns:repeat(5,1fr);left:0;right:0;bottom:0;height:70px;background:rgba(9,11,9,.97);border-top:1px solid var(--line);z-index:20;padding-bottom:env(safe-area-inset-bottom)}.mobile-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10px;color:#aaa}.mobile-nav a.active,.mobile-nav a:hover{color:var(--olive2)}.mobile-nav .icon{font-size:19px;width:auto}.mobile-nav a.call{color:var(--olive2);font-weight:800}.mobile-nav a.call .icon{display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--olive);color:#10120d;font-size:25px;margin-top:-30px;border:4px solid #0b0d0b;box-shadow:0 6px 18px rgba(0,0,0,.55)}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+  <div class="brand"><img src="lakeview-logo-olive.png" alt="Lakeview Mechanical"><div class="hub-label">TEAM HUB</div></div>
+  <nav class="nav">
+    <a class="active" href="#home"><span class="icon">⌂</span>Home</a>
+    <a href="#jobs"><span class="icon">▣</span>Job Tickets</a>
+    <a href="#calendar"><span class="icon">▦</span>Calendar</a>
+    <a href="#chat"><span class="icon">💬</span>Team Chat</a>
+    <a href="#links"><span class="icon">↗</span>Links</a>
+  </nav>
+  <div class="side-note">BUILT ON<br>EXPERIENCE.<br>FOCUSED ON <span>RESULTS.</span></div>
+</aside>
+<main class="main" id="home">
+  <div class="topbar">
+    <div class="mobile-brand"><img src="lakeview-logo-olive.png" alt="Lakeview Mechanical"></div>
+    <div class="meta"><div><span class="eyebrow">TEAM HUB</span><br><strong>Lakeview Mechanical</strong></div><div>📅 <strong id="today">Today</strong></div></div>
+  </div>
+  <section class="hero-title"><div class="eyebrow">FIELD TEAM</div><h1>Lakeview Team Hub</h1><p>Job tickets, schedule, team chat and company links in one place.</p></section>
+
+  <!-- ============ JOB TICKETS ============
+       To change the active job: update the job code, the NAVIGATE maps link,
+       the OPEN FULL FOLDER link, and the six folder-chip links below.
+       Drive: Lakeview Mechanical > Jobs > ACTIVE holds current jobs; COMPLETED holds past jobs. -->
+  <section class="card" id="jobs">
+    <div class="card-head"><h2>JOB TICKETS</h2><a class="btn small" href="https://drive.google.com/drive/folders/1UR_NMwmAZP2yrKOITE_aC3TFi8DnujXs" target="_blank" rel="noopener">+ NEW JOB</a></div>
+    <div class="subhead">CURRENT JOBS — 1 ACTIVE</div>
+    <div class="job-media"><div class="job-copy"><div class="job-code">260825JK-Arcyle St-Dockter</div><div class="job-sub">Dockter • Arcyle St • Started 8/25</div><div class="job-actions"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Arcyle+St" target="_blank" rel="noopener">◈ NAVIGATE</a><a class="btn ghost" href="https://drive.google.com/drive/folders/18V4A-wD26uUS20HBGolXEW7WmXcHKO2V?usp=sharing" target="_blank" rel="noopener">FULL FOLDER →</a></div></div></div>
+    <div class="chips">
+      <a href="https://drive.google.com/drive/folders/1EOdEqlu67kolAPcqOK2P3RvqcwMYVUN7" target="_blank" rel="noopener"><span class="ci">📄</span>Contract &amp; Estimate</a>
+      <a href="https://drive.google.com/drive/folders/17B7UVkO3yDm-51muAEi1JJ4S95Ti-Pu-" target="_blank" rel="noopener"><span class="ci">📐</span>Drawings &amp; Plans</a>
+      <a href="https://drive.google.com/drive/folders/1JiJBpY8ccTng5d_fUjOX5h2tjCPM9h5h" target="_blank" rel="noopener"><span class="ci">📷</span>Photos</a>
+      <a href="https://drive.google.com/drive/folders/1uZDL1Yjs93L6tETmiR_POxo9XOwoo7My" target="_blank" rel="noopener"><span class="ci">✅</span>Forms &amp; Inspections</a>
+      <a href="https://drive.google.com/drive/folders/1SNMH0UpZcnziMS5D1N2q_w8oS4i8f__m" target="_blank" rel="noopener"><span class="ci">📝</span>Job Notes</a>
+      <a href="https://drive.google.com/drive/folders/1V9Rc58vNdJ-jSE6xA2POwh08B9sI7MmL" target="_blank" rel="noopener"><span class="ci">📁</span>Other</a>
+    </div>
+    <div class="pastjobs"><div><b>Past jobs</b> — finished tickets move to COMPLETED, same folders inside.</div><a class="btn secondary small" href="https://drive.google.com/drive/folders/1pmohUYNwKMNFLNPg5DOfJS49hHUanrQz" target="_blank" rel="noopener">OPEN PAST JOBS</a></div>
+  </section>
+
+  <section class="card" id="calendar">
+    <div class="card-head"><h2>CALENDAR</h2><span class="muted">Lakeview schedule</span></div>
+    <div class="calendar-wrap"><div class="calendar-frame"><iframe id="calframe" loading="lazy" src="https://calendar.google.com/calendar/embed?src=83affa80cdbe9f6c55288dfc4f0a24f45eb5c6b5d7c63eb00c249c5b93ba069e%40group.calendar.google.com&ctz=America%2FDetroit" title="Lakeview Mechanical calendar"></iframe></div><div class="cal-foot"><a href="https://calendar.google.com/calendar/embed?src=83affa80cdbe9f6c55288dfc4f0a24f45eb5c6b5d7c63eb00c249c5b93ba069e%40group.calendar.google.com&ctz=America%2FDetroit" target="_blank" rel="noopener">Open full calendar ↗</a></div></div>
+  </section>
+
+  <section class="card" id="chat">
+    <div class="card-head"><h2>TEAM CHAT</h2><span class="muted">Forum style</span></div>
+    <div class="chat-body">
+      <p><b>Each job gets its own space</b> in Google Chat — chat and photo sharing inside, named after the job ticket. Open Chat, hit <b>Spaces</b>, and pick your job.</p>
+      <a class="btn" href="https://chat.google.com" target="_blank" rel="noopener">OPEN TEAM CHAT →</a>
+    </div>
+  </section>
+
+  <section class="card" id="links">
+    <div class="card-head"><h2>LINKS</h2><span class="muted">Quick access</span></div>
+    <div class="link-grid">
+      <a href="https://www.lakeviewmechanical.com/" target="_blank" rel="noopener"><b>🌐 Our Website</b><span>lakeviewmechanical.com</span></a>
+      <a href="https://maps.google.com/?cid=16385320858374077293" target="_blank" rel="noopener"><b>★ Google Reviews</b><span>Our listing on Google</span></a>
+      <a href="https://docs.google.com/spreadsheets/d/10Dwdcpl1P2cYztdAPLZZhfiFWAZUMYrVbBQe6d1iJXM/edit?gid=0#gid=0" target="_blank" rel="noopener"><b>📊 Company Spreadsheet</b><span>Google Sheets</span></a>
+      <a href="https://keap.app/contact-us/7253080921231722" target="_blank" rel="noopener"><b>👤 Keap</b><span>Contacts &amp; CRM</span></a>
+      <a href="https://www.yelp.com/biz/lakeview-mechanical-warren-4" target="_blank" rel="noopener"><b>★ Yelp</b><span>Company profile</span></a>
+      <a href="tel:+15867572700"><b>✆ Call Office</b><span>(586) 757-2700 · 24-hr emergency</span></a>
+    </div>
+    <div class="qr-card"><img src="qr-reviews.png" alt="QR code — leave Lakeview Mechanical a Google review"><div><b>Happy customer? Show them this.</b><p>They scan it with their phone camera and it opens our Google listing — one tap to leave a review before you pull out of the driveway.</p></div></div>
+  </section>
+
+  <div class="footer">Lakeview Mechanical Team Hub • Built for the field<br>24400 Mound Rd, Warren, MI 48091 • <a href="tel:+15867572700">(586) 757-2700</a></div>
+</main>
+</div>
+<nav class="mobile-nav"><a class="active" href="#jobs"><span class="icon">▣</span>Jobs</a><a href="#calendar"><span class="icon">▦</span>Schedule</a><a class="call" href="tel:+15867572700" aria-label="Call the office"><span class="icon">✆</span>Call</a><a href="#chat"><span class="icon">💬</span>Chat</a><a href="#links"><span class="icon">↗</span>Links</a></nav>
+<script>
+(function(){
+  // Live date in the top bar
+  var d=new Date();
+  var el=document.getElementById('today');
+  if(el)el.textContent=d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+
+  // Phone-friendly calendar: agenda view on small screens
+  if(window.innerWidth<700){
+    var f=document.getElementById('calframe');
+    if(f)f.src=f.src+'&mode=AGENDA';
+  }
+
+  // Highlight the section you're on (sidebar + bottom nav)
+  var ids=['links','chat','calendar','jobs','home'];
+  var navLinks=document.querySelectorAll('.nav a, .mobile-nav a');
+  var pinned=null; // section chosen by tapping the nav; wins until the user scrolls manually
+  function setActive(id){
+    navLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id);});
+  }
+  navLinks.forEach(function(a){
+    a.addEventListener('click',function(){
+      var h=a.getAttribute('href');
+      if(h&&h.charAt(0)==='#'){pinned=h.slice(1);setActive(pinned);}
+    });
+  });
+  ['wheel','touchmove'].forEach(function(ev){
+    window.addEventListener(ev,function(){pinned=null;},{passive:true});
+  });
+  var ticking=false;
+  function onScroll(){
+    if(ticking||pinned)return;
+    ticking=true;
+    requestAnimationFrame(function(){
+      ticking=false;
+      if(pinned)return;
+      if(window.scrollY<80){setActive(window.innerWidth<700?'jobs':'home');return;}
+      if(window.scrollY+window.innerHeight>=document.body.scrollHeight-8){setActive('links');return;}
+      var pos=window.scrollY+window.innerHeight*0.35;
+      for(var i=0;i<ids.length;i++){
+        var s=document.getElementById(ids[i]);
+        if(s&&s.offsetTop<=pos){setActive(ids[i]);return;}
+      }
+      setActive('home');
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
+</script>
+</body></html>
