@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0d0b">
+<meta name="robots" content="noindex">
+<meta name="description" content="Lakeview Mechanical dig contract — fill it out on your phone, sign, and save the PDF.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310120d'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Arial,sans-serif' font-size='30' font-weight='900' fill='%23bac64a'%3ELM%3C/text%3E%3C/svg%3E">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Dig Contract — Lakeview Mechanical</title>
+<style>
+:root{--bg:#090b09;--panel:#121512;--panel2:#171b17;--line:#2b302a;--text:#f3f3ed;--muted:#a7aba1;--olive:#9aa52d;--olive2:#bac64a;--max:820px;--radius:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:#070807}
+body{margin:0;background:radial-gradient(circle at 75% 0%,#1a2016 0,#0b0d0b 35%,#070807 100%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;padding-bottom:128px}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:14px 12px 8px}
+
+/* header */
+.top{display:flex;align-items:center;gap:12px;padding:6px 2px 14px}
+.top img{width:170px;height:auto}
+.back{margin-left:auto;color:var(--muted);font-weight:800;font-size:13px;letter-spacing:.08em}
+.back:hover{color:var(--olive2)}
+.hero{padding:0 4px 14px}
+.eyebrow{color:var(--olive2);font-size:12px;font-weight:900;letter-spacing:.16em}
+.hero h1{font-size:clamp(24px,5vw,34px);margin:3px 0 0;letter-spacing:-.03em;line-height:1.05}
+.hero p{color:var(--muted);margin:8px 0 0;font-size:14px;line-height:1.5}
+
+/* cards */
+.card{background:linear-gradient(145deg,rgba(25,29,24,.98),rgba(12,14,12,.98));border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 16px 40px rgba(0,0,0,.28);margin:0 0 14px;overflow:hidden}
+.card>h2{margin:0;padding:16px 18px 12px;font-size:14px;letter-spacing:.14em;color:var(--olive2)}
+.grouplabel{display:flex;align-items:center;gap:12px;margin:22px 4px 12px;color:var(--muted);font-size:12px;font-weight:900;letter-spacing:.2em}
+.grouplabel:after{content:"";flex:1;height:1px;background:var(--line)}
+.body{padding:0 16px 16px}
+
+/* fields */
+.field{margin:0 0 12px}
+.field label{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--muted);margin:0 0 6px}
+input,textarea,select{width:100%;background:#0d100d;color:var(--text);border:1px solid var(--line);border-radius:11px;padding:13px 13px;font:inherit;font-size:16px;min-height:50px}
+input:focus,textarea:focus{outline:2px solid var(--olive2);outline-offset:1px;border-color:transparent}
+textarea{min-height:130px;resize:vertical;line-height:1.5}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.req{color:#e8735e}
+.hint{color:var(--muted);font-size:12px;line-height:1.5;margin:6px 2px 0}
+
+/* section switch */
+.sec{border:1px solid var(--line);border-radius:14px;background:#0e110e;margin:0 0 10px;overflow:hidden}
+.sec.on{border-color:#5c6626;background:#111510}
+.sechead{display:flex;align-items:center;gap:13px;padding:14px 15px;cursor:pointer;user-select:none;min-height:60px}
+.sechead b{font-size:16px;letter-spacing:-.01em;flex:1}
+.sechead .count{font-size:12px;font-weight:800;color:var(--olive2);letter-spacing:.06em}
+.sw{flex:none;width:52px;height:31px;border-radius:20px;background:#242a22;border:1px solid #3a4034;position:relative;transition:.16s}
+.sw:after{content:"";position:absolute;top:3px;left:3px;width:23px;height:23px;border-radius:50%;background:#8b9187;transition:.16s}
+.sec.on .sw{background:var(--olive);border-color:var(--olive2)}
+.sec.on .sw:after{left:26px;background:#10120d}
+.items{display:none;border-top:1px solid var(--line);padding:5px 0}
+.sec.on .items{display:block}
+.item{display:flex;align-items:center;gap:12px;padding:11px 15px;min-height:56px;border-bottom:1px solid rgba(43,48,42,.5)}
+.item:last-child{border-bottom:0}
+.item .tap{display:flex;align-items:center;gap:12px;flex:1;cursor:pointer;user-select:none;min-width:0}
+.box{flex:none;width:26px;height:26px;border-radius:7px;border:2px solid #4a5142;background:#0a0c0a;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:transparent;transition:.12s}
+.item.on .box{background:var(--olive);border-color:var(--olive2);color:#10120d}
+.item .lbl{font-weight:600;font-size:15px;letter-spacing:-.01em;color:#d7d9d1;overflow:hidden;text-overflow:ellipsis}
+.item.on .lbl{color:#fff}
+.item .qty{flex:none;width:80px;min-height:42px;padding:9px 8px;text-align:center;font-size:15px;font-weight:700;background:#0a0c0a}
+.item.on .qty{border-color:#5c6626}
+
+/* payment */
+.paytable{display:grid;grid-template-columns:1.1fr 1fr 1.2fr;gap:8px;align-items:center}
+.paytable .h{font-size:11px;font-weight:900;letter-spacing:.12em;color:var(--muted);padding:0 0 2px}
+.paytable .rl{font-size:12px;font-weight:800;letter-spacing:.04em;color:#d7d9d1;line-height:1.25}
+.paytable input{min-height:46px;padding:11px 10px;font-size:15px}
+.paytable input[readonly]{background:#151a14;color:var(--olive2);font-weight:800;border-style:dashed}
+.total input{font-size:20px;font-weight:900;color:var(--olive2);text-align:right}
+
+/* signature */
+.sigwrap{margin:0 0 14px}
+.sigtop{display:flex;align-items:center;justify-content:space-between;margin:0 0 6px}
+.sigtop label{margin:0}
+.clr{background:none;border:0;color:var(--muted);font-weight:800;font-size:12px;letter-spacing:.1em;padding:6px 2px;cursor:pointer;min-height:auto}
+.clr:hover{color:var(--olive2)}
+canvas.sig{width:100%;height:150px;background:#fbfbf7;border:1px solid var(--line);border-radius:12px;touch-action:none;display:block}
+
+/* action bar */
+.actions{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(9,11,9,.97);border-top:1px solid var(--line);padding:11px 12px calc(11px + env(safe-area-inset-bottom))}
+.actions .inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 18px;background:var(--olive);color:#10120d;border:0;border-radius:11px;font:inherit;font-weight:900;letter-spacing:.03em;min-height:52px;cursor:pointer;flex:1}
+.btn:hover{background:var(--olive2)}
+.btn[disabled]{opacity:.5;cursor:default}
+.btn.secondary{background:#1d211b;color:#eee;border:1px solid #3a4034;flex:none;padding:14px 15px}
+.btn.secondary:hover{background:#2a3023}
+.status{color:var(--muted);font-size:12px;text-align:center;max-width:var(--max);margin:7px auto 0;min-height:15px}
+.status.err{color:#e8735e}
+.status.ok{color:var(--olive2)}
+.footer{color:#72776d;font-size:12px;text-align:center;line-height:1.7;padding:18px 12px 6px}
+@media(min-width:760px){.wrap{padding:20px 18px}.item .lbl{font-size:15px}}
+@media(max-width:420px){.paytable{grid-template-columns:1fr 1fr;row-gap:4px}.paytable .h.d{display:none}.paytable .rl{grid-column:1/-1;padding-top:8px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <img src="lakeview-logo-olive.png" alt="Lakeview Mechanical">
+    <a class="back" href="index.html">← TEAM HUB</a>
+  </div>
+  <div class="hero">
+    <div class="eyebrow">FIELD PAPERWORK</div>
+    <h1>Dig Contract</h1>
+    <p>Fill it out here, have the customer sign, then save the PDF straight into the job folder. Saves as you go — closing the page won't lose it.</p>
+  </div>
+
+  <!-- CUSTOMER -->
+  <section class="card">
+    <h2>CUSTOMER</h2>
+    <div class="body">
+      <div class="field"><label>NAME <span class="req">*</span></label><input id="Name" autocomplete="name"></div>
+      <div class="field"><label>JOB SITE ADDRESS <span class="req">*</span></label><input id="Address" autocomplete="street-address"></div>
+      <div class="row2">
+        <div class="field"><label>CITY / ZIP</label><input id="City_Zip"></div>
+        <div class="field"><label>PHONE <span class="req">*</span></label><input id="Phone" type="tel" inputmode="tel" autocomplete="tel"></div>
+      </div>
+      <div class="field"><label>EMAIL</label><input id="Email" type="email" inputmode="email" autocomplete="email"></div>
+      <div class="row2">
+        <div class="field"><label>DATE</label><input id="Date" type="date"></div>
+        <div class="field"><label>JOB #</label><input id="Job_Number" placeholder="260825JK"></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="secs"></div>
+
+  <!-- SCOPE -->
+  <section class="card">
+    <h2>SCOPE OF WORK</h2>
+    <div class="body">
+      <div class="field"><label>WHAT WE'RE DOING — AND ANY EXCEPTIONS</label>
+        <textarea id="Work_Description" placeholder="Excavate front yard, replace 42' of clay lead to city main. Restore driveway apron; haul away spoils."></textarea>
+        <p class="hint">Anything the customer is expecting that isn't on the checklist has to be written here. Exceptions not written down aren't covered.</p>
+      </div>
+      <div class="field total"><label>CONTRACT TOTAL</label><input id="Contract_Total" inputmode="decimal" placeholder="$0.00"></div>
+    </div>
+  </section>
+
+  <!-- PAYMENT -->
+  <section class="card">
+    <h2>PAYMENT</h2>
+    <div class="body">
+      <div class="paytable">
+        <div class="h">&nbsp;</div><div class="h d">DATE</div><div class="h d">AMOUNT</div>
+        <div class="rl">DOWN<br>PAYMENT</div>
+        <input id="Down_Payment_Date" type="date"><input id="Down_Payment_Amount" inputmode="decimal" placeholder="$0.00">
+        <div class="rl">UNPAID<br>BALANCE</div>
+        <input id="Unpaid_Balance_Date" type="date"><input id="Unpaid_Balance_Amount" readonly tabindex="-1">
+        <div class="rl">FINAL<br>PAYMENT</div>
+        <input id="Final_Payment_Date" type="date"><input id="Final_Payment_Amount" inputmode="decimal" placeholder="$0.00">
+        <div class="rl">FINAL<br>BALANCE</div>
+        <input id="Final_Balance_Date" type="date"><input id="Final_Balance_Amount" readonly tabindex="-1">
+      </div>
+      <p class="hint">Unpaid and final balance calculate themselves from the contract total.</p>
+    </div>
+  </section>
+
+  <!-- SIGN -->
+  <section class="card">
+    <h2>SIGN OFF</h2>
+    <div class="body">
+      <div class="field"><label>CUSTOMER INITIALS — "UNFORESEEN INCIDENTALS" EXPLAINED</label><input id="Incidentals_Initials" maxlength="4" style="max-width:120px;text-align:center;text-transform:uppercase"></div>
+      <div class="sigwrap">
+        <div class="sigtop"><label>SERVICEMAN SIGNATURE</label><button class="clr" data-clear="sigA">CLEAR</button></div>
+        <canvas class="sig" id="sigA"></canvas>
+      </div>
+      <div class="sigwrap">
+        <div class="sigtop"><label>CUSTOMER SIGNATURE</label><button class="clr" data-clear="sigB">CLEAR</button></div>
+        <canvas class="sig" id="sigB"></canvas>
+      </div>
+      <p class="hint">Signing here is the same as signing the paper — the customer is agreeing to the terms printed on the contract, including the 18% monthly interest on balances unpaid 30 days after completion.</p>
+    </div>
+  </section>
+
+  <div class="footer">Lakeview Mechanical • 24400 Mound Rd, Warren, MI 48091 • <a href="tel:+15867572700">(586) 757-2700</a></div>
+</div>
+
+<div class="actions">
+  <div class="inner">
+    <button class="btn secondary" id="btnReset" title="Start a new blank contract">NEW</button>
+    <button class="btn" id="btnPdf">SAVE PDF</button>
+    <button class="btn secondary" id="btnJson" title="Export the data for Keap">DATA</button>
+  </div>
+  <div class="status" id="status"></div>
+</div>
+
+<script src="pdf-lib.min.js"></script>
+<script>
+(function(){
+"use strict";
+var TEMPLATE = "dig-contract-fillable.pdf";
+var SECTIONS = [{"k":"INT_SAN","t":"Sanitary Sewer","g":"INTERIOR","c":"CHK_INT_SAN","i":[{"f":"INT_SAN_LINEAR_FOOTAGE","l":"LINEAR FOOTAGE"},{"f":"INT_SAN_STACKS","l":"STACKS"},{"f":"INT_SAN_CLEAN_OUT","l":"CLEAN-OUT"},{"f":"INT_SAN_STORM_CLEAN_OUT","l":"STORM CLEAN-OUT"},{"f":"INT_SAN_FLOOR_DRAINS","l":"FLOOR DRAINS"},{"f":"INT_SAN_BACKWATER_VALVES","l":"BACKWATER VALVES"},{"f":"INT_SAN_P_TRAPS","l":"P-TRAPS"},{"f":"INT_SAN_CLEAN_OUTS","l":"CLEAN-OUTS"},{"f":"INT_SAN_LAUNDRY_TUB","l":"LAUNDRY TUB"},{"f":"INT_SAN_HOT_WATER_TANK","l":"HOT WATER TANK"},{"f":"INT_SAN_SHOWER_TRAP","l":"SHOWER TRAP"},{"f":"INT_SAN_TOILET","l":"TOILET"},{"f":"INT_SAN_VENT_AAV","l":"VENT/AAV"},{"f":"INT_SAN_URINAL","l":"URINAL"},{"f":"INT_SAN_BWV","l":"BWV"}]},{"k":"INT_WP","t":"Waterproofing","g":"INTERIOR","c":"CHK_INT_WP","i":[{"f":"INT_WP_LINEAR_FOOTAGE","l":"LINEAR FOOTAGE"},{"f":"INT_WP_SUMP_PIT_INSTALL","l":"SUMP PIT INSTALL"},{"f":"INT_WP_MIRROR_DRAIN","l":"MIRROR DRAIN"},{"f":"INT_WP_DRAIN_TILE","l":"DRAIN-TILE"},{"f":"INT_WP_SOCK_COVER","l":"SOCK COVER"},{"f":"INT_WP_STORM_TIE_IN","l":"STORM TIE IN"},{"f":"INT_WP_POURED_WALL","l":"POURED WALL"},{"f":"INT_WP_BLOCK_WALL","l":"BLOCK WALL"},{"f":"INT_WP_CRACK_REPAIR","l":"CRACK REPAIR"},{"f":"INT_WP_FIBER_REPAIR","l":"FIBER REPAIR"},{"f":"INT_WP_ROD_HOLES","l":"ROD HOLES"},{"f":"INT_WP_POLY_INJECTION","l":"POLY INJECTION"},{"f":"INT_WP_BRICK_SEAT","l":"BRICK SEAT"},{"f":"INT_WP_HONEYCOMBING","l":"HONEYCOMBING"},{"f":"INT_WP_BEAM_POCKET","l":"BEAM POCKET"}]},{"k":"SUMP","t":"Sump-Pump","g":"INTERIOR","c":"CHK_SUMP","i":[{"f":"SUMP_NEW_PIT","l":"NEW PIT"},{"f":"SUMP_NEW_PUMP","l":"NEW PUMP"},{"f":"SUMP_BACK_UP_PUMP","l":"BACK-UP PUMP"},{"f":"SUMP_H2O","l":"H2O"},{"f":"SUMP_DEDICATED_OUTLET","l":"DEDICATED OUTLET"},{"f":"SUMP_RPZ","l":"RPZ"},{"f":"SUMP_BACKFLOW","l":"BACKFLOW"},{"f":"SUMP_BATTERY","l":"BATTERY"}]},{"k":"DEMO","t":"Demo / Removal","g":"INTERIOR","c":"CHK_DEMO","i":[{"f":"DEMO_FLOOR_REMOVAL","l":"FLOOR REMOVAL"},{"f":"DEMO_CARPET_PADDING","l":"CARPET/PADDING"},{"f":"DEMO_CERAMIC_TILE","l":"CERAMIC TILE"},{"f":"DEMO_PANELING","l":"PANELING"},{"f":"DEMO_DRYWALL","l":"DRYWALL"},{"f":"DEMO_MOLDING","l":"MOLDING"}]},{"k":"EXT_SAN","t":"Sanitary Sewer","g":"EXTERIOR","c":"CHK_EXT_SAN","i":[{"f":"EXT_SAN_IN_OUT","l":"IN / OUT"},{"f":"EXT_SAN_MARK_UTILITIES","l":"MARK UTILITIES"},{"f":"EXT_SAN_POSITIVE_GAS","l":"POSITIVE GAS"},{"f":"EXT_SAN_POSITIVE_POWER","l":"POSITIVE POWER"},{"f":"EXT_SAN_POSITIVE_WATER","l":"POSITIVE WATER"},{"f":"EXT_SAN_POSITIVE_STORM","l":"POSITIVE STORM"},{"f":"EXT_SAN_CORE_MAIN","l":"CORE MAIN"},{"f":"EXT_SAN_CLEAN_OUT","l":"CLEAN-OUT"},{"f":"EXT_SAN_BACKWATER_VALVE","l":"BACKWATER VALVE"},{"f":"EXT_SAN_BRASS_CAP","l":"BRASS CAP"},{"f":"EXT_SAN_DOUBLE_CLEAN_OUT","l":"DOUBLE CLEAN-OUT"},{"f":"EXT_SAN_WATER_SERVICE","l":"WATER SERVICE"},{"f":"EXT_SAN_SHARED_SYSTEM","l":"SHARED SYSTEM"}]},{"k":"ROW","t":"Right-of-Way","g":"EXTERIOR","c":"CHK_ROW","i":[{"f":"ROW_SOIL_DENSITY","l":"SOIL DENSITY"},{"f":"ROW_ROAD_CUT","l":"ROAD CUT"},{"f":"ROW_ROAD_CLOSURE","l":"ROAD CLOSURE"},{"f":"ROW_HAUL_OUT","l":"HAUL OUT"},{"f":"ROW_HAUL_IN","l":"HAUL IN"},{"f":"ROW_ROAD_PATCH","l":"ROAD PATCH"},{"f":"ROW_CRUSHED","l":"CRUSHED"},{"f":"ROW_SAND","l":"SAND"},{"f":"ROW_LIME_STONE","l":"LIME STONE"},{"f":"ROW_TOPSOIL","l":"TOPSOIL"},{"f":"ROW_SEED","l":"SEED"},{"f":"ROW_SOD","l":"SOD"}]},{"k":"EXT_WP","t":"Waterproofing","g":"EXTERIOR","c":"CHK_EXT_WP","i":[{"f":"EXT_WP_LINEAR_FOOTAGE","l":"LINEAR FOOTAGE"},{"f":"EXT_WP_TAR_COAT_WALL","l":"TAR COAT WALL"},{"f":"EXT_WP_VISQUEEN_WALL","l":"VISQUEEN WALL"},{"f":"EXT_WP_PEA_STONE","l":"PEA STONE"},{"f":"EXT_WP_DRAIN_TILE","l":"DRAIN-TILE"},{"f":"EXT_WP_CLEAN_OUTS","l":"CLEAN-OUTS"},{"f":"EXT_WP_BRICK_SEAT","l":"BRICK-SEAT"}]},{"k":"TRENCH","t":"Trench-Dig","g":"EXTERIOR","c":"CHK_TRENCH","i":[{"f":"TRENCH_LINEAR_FOOTAGE","l":"LINEAR FOOTAGE"},{"f":"TRENCH_OVERFLOW","l":"OVERFLOW"},{"f":"TRENCH_CLEAN_OUT","l":"CLEAN-OUT"},{"f":"TRENCH_IN_LINE_CLEAN_OUT","l":"IN-LINE CLEAN-OUT"},{"f":"TRENCH_POP_UP","l":"POP-UP"},{"f":"TRENCH_CORE_BASIN","l":"CORE BASIN"},{"f":"TRENCH_STORM_MAIN","l":"STORM MAIN"}]}];
+var KEY = "lm-dig-contract-v1";
+var $ = function(id){ return document.getElementById(id); };
+var status = $("status");
+function say(msg, cls){ status.className = "status " + (cls||""); status.textContent = msg||""; }
+
+/* ---------- build the checklist ---------- */
+var MEASURES = {
+  EXT_SAN:[["ExtSan_Length","LENGTH"],["ExtSan_Depth","DEPTH"]],
+  ROW:[["ROW_Length","LENGTH"],["ROW_Width","WIDTH"],["ROW_Other","OTHER"]]
+};
+var host = $("secs"), lastGroup = "";
+SECTIONS.forEach(function(s){
+  if(s.g !== lastGroup){
+    lastGroup = s.g;
+    var g = document.createElement("div");
+    g.className = "grouplabel"; g.textContent = s.g;
+    host.appendChild(g);
+  }
+  var sec = document.createElement("div");
+  sec.className = "sec"; sec.dataset.k = s.k;
+  var head = '<div class="sechead" data-toggle="' + s.k + '"><div class="sw"></div>' +
+             '<b>' + s.t + '</b><span class="count" id="ct_' + s.k + '"></span></div>';
+  var rows = '<div class="items">';
+  (MEASURES[s.k]||[]).forEach(function(m){
+    rows += '<div class="item measure"><div class="tap" style="cursor:default"><div class="lbl">' + m[1] + '</div></div>' +
+            '<input class="qty" style="width:96px" id="' + m[0] + '" data-plain="1"></div>';
+  });
+  s.i.forEach(function(it){
+    rows += '<div class="item" data-f="' + it.f + '"><div class="tap"><div class="box">✓</div>' +
+            '<div class="lbl">' + it.l + '</div></div>' +
+            '<input class="qty" inputmode="numeric" placeholder="qty" data-q="' + it.f + '"></div>';
+  });
+  rows += "</div>";
+  sec.innerHTML = head + rows;
+  host.appendChild(sec);
+});
+
+function count(k){
+  var sec = document.querySelector('.sec[data-k="' + k + '"]');
+  var n = sec.querySelectorAll(".item.on").length;
+  $("ct_" + k).textContent = n ? n + " selected" : "";
+}
+document.addEventListener("click", function(e){
+  var head = e.target.closest(".sechead");
+  if(head){ head.parentNode.classList.toggle("on"); save(); return; }
+  var tap = e.target.closest(".item .tap");
+  if(tap && tap.parentNode.dataset.f){
+    var item = tap.parentNode;
+    item.classList.toggle("on");
+    if(!item.classList.contains("on")) item.querySelector(".qty").value = "";
+    count(item.closest(".sec").dataset.k);
+    save();
+  }
+  var clr = e.target.closest("[data-clear]");
+  if(clr){ pads[clr.dataset.clear].clear(); save(); }
+});
+document.addEventListener("input", function(e){
+  var q = e.target.dataset && e.target.dataset.q;
+  if(q && e.target.value.trim()){
+    var item = e.target.closest(".item");
+    if(!item.classList.contains("on")){ item.classList.add("on"); count(item.closest(".sec").dataset.k); }
+  }
+  if(e.target.id === "Contract_Total" || e.target.id === "Down_Payment_Amount" || e.target.id === "Final_Payment_Amount") calc();
+  save();
+});
+
+/* ---------- money ---------- */
+function num(v){ var n = parseFloat(String(v||"").replace(/[^0-9.\-]/g,"")); return isNaN(n) ? 0 : n; }
+function money(n){ return "$" + n.toLocaleString("en-US",{minimumFractionDigits:2, maximumFractionDigits:2}); }
+function calc(){
+  var t = num($("Contract_Total").value);
+  var d = num($("Down_Payment_Amount").value);
+  var p = num($("Final_Payment_Amount").value);
+  $("Unpaid_Balance_Amount").value = t ? money(t - d) : "";
+  $("Final_Balance_Amount").value  = t ? money(t - d - p) : "";
+}
+["Contract_Total","Down_Payment_Amount","Final_Payment_Amount"].forEach(function(id){
+  $(id).addEventListener("blur", function(){ if(this.value.trim()) this.value = money(num(this.value)); calc(); save(); });
+});
+
+/* ---------- signature pads ---------- */
+function Pad(id){
+  var c = $(id), ctx = c.getContext("2d"), drawing = false, dirty = false;
+  function size(){
+    var r = c.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+    var data = dirty ? c.toDataURL() : null;
+    c.width = Math.round(r.width * dpr); c.height = Math.round(r.height * dpr);
+    ctx.scale(dpr, dpr); ctx.lineWidth = 2.4; ctx.lineCap = "round";
+    ctx.lineJoin = "round"; ctx.strokeStyle = "#12163a";
+    if(data){ var i = new Image(); i.onload = function(){ ctx.drawImage(i,0,0,r.width,r.height); }; i.src = data; }
+  }
+  function pt(e){ var r = c.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; }
+  c.addEventListener("pointerdown", function(e){
+    drawing = true; dirty = true; c.setPointerCapture(e.pointerId);
+    var p = pt(e); ctx.beginPath(); ctx.moveTo(p[0], p[1]);
+  });
+  c.addEventListener("pointermove", function(e){
+    if(!drawing) return; e.preventDefault();
+    var p = pt(e); ctx.lineTo(p[0], p[1]); ctx.stroke();
+  });
+  ["pointerup","pointercancel","pointerleave"].forEach(function(ev){
+    c.addEventListener(ev, function(){ if(drawing){ drawing = false; save(); } });
+  });
+  size(); window.addEventListener("resize", size);
+  return {
+    clear: function(){ ctx.clearRect(0,0,c.width,c.height); dirty = false; },
+    data: function(){ return dirty ? c.toDataURL("image/png") : null; },
+    // tight crop to the ink, so the signature fills the line on the PDF
+    inked: function(){
+      if(!dirty) return null;
+      var w = c.width, h = c.height, d;
+      try { d = ctx.getImageData(0,0,w,h).data; } catch(e){ return c.toDataURL("image/png"); }
+      var x0 = w, y0 = h, x1 = -1, y1 = -1;
+      for(var y = 0; y < h; y++){
+        for(var x = 0; x < w; x++){
+          if(d[(y*w + x)*4 + 3] > 12){
+            if(x < x0) x0 = x; if(x > x1) x1 = x;
+            if(y < y0) y0 = y; if(y > y1) y1 = y;
+          }
+        }
+      }
+      if(x1 < 0) return null;
+      var pad = Math.round(Math.min(w,h) * 0.02);
+      x0 = Math.max(0, x0 - pad); y0 = Math.max(0, y0 - pad);
+      x1 = Math.min(w - 1, x1 + pad); y1 = Math.min(h - 1, y1 + pad);
+      var o = document.createElement("canvas");
+      o.width = x1 - x0 + 1; o.height = y1 - y0 + 1;
+      o.getContext("2d").drawImage(c, x0, y0, o.width, o.height, 0, 0, o.width, o.height);
+      return o.toDataURL("image/png");
+    },
+    load: function(url){
+      if(!url) return;
+      var r = c.getBoundingClientRect(), i = new Image();
+      i.onload = function(){ ctx.drawImage(i,0,0,r.width,r.height); dirty = true; };
+      i.src = url;
+    }
+  };
+}
+var pads = { sigA: Pad("sigA"), sigB: Pad("sigB") };
+
+/* ---------- state ---------- */
+var TEXTIDS = ["Name","Address","City_Zip","Phone","Email","Date","Job_Number","Work_Description",
+  "Contract_Total","Incidentals_Initials","Down_Payment_Date","Down_Payment_Amount",
+  "Unpaid_Balance_Date","Final_Payment_Date","Final_Payment_Amount","Final_Balance_Date",
+  "ExtSan_Length","ExtSan_Depth","ROW_Length","ROW_Width","ROW_Other"];
+
+function collect(){
+  var st = { f:{}, secs:{}, items:{}, sig:{} };
+  TEXTIDS.forEach(function(id){ if($(id)) st.f[id] = $(id).value; });
+  document.querySelectorAll(".sec").forEach(function(s){ st.secs[s.dataset.k] = s.classList.contains("on"); });
+  document.querySelectorAll(".item[data-f]").forEach(function(i){
+    if(i.classList.contains("on")) st.items[i.dataset.f] = i.querySelector(".qty").value.trim() || "X";
+  });
+  st.sig.a = pads.sigA.data(); st.sig.b = pads.sigB.data();
+  return st;
+}
+var saveTimer;
+function save(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(function(){
+    try { localStorage.setItem(KEY, JSON.stringify(collect())); } catch(e){}
+  }, 250);
+}
+function restore(){
+  var raw; try { raw = localStorage.getItem(KEY); } catch(e){ return false; }
+  if(!raw) return false;
+  var st; try { st = JSON.parse(raw); } catch(e){ return false; }
+  Object.keys(st.f||{}).forEach(function(id){ if($(id)) $(id).value = st.f[id]; });
+  Object.keys(st.secs||{}).forEach(function(k){
+    var s = document.querySelector('.sec[data-k="' + k + '"]');
+    if(s && st.secs[k]) s.classList.add("on");
+  });
+  Object.keys(st.items||{}).forEach(function(f){
+    var i = document.querySelector('.item[data-f="' + f + '"]');
+    if(!i) return;
+    i.classList.add("on");
+    if(st.items[f] !== "X") i.querySelector(".qty").value = st.items[f];
+  });
+  if(st.sig){ pads.sigA.load(st.sig.a); pads.sigB.load(st.sig.b); }
+  SECTIONS.forEach(function(s){ count(s.k); });
+  calc();
+  return !!(st.f && (st.f.Name || st.f.Address));
+}
+
+/* ---------- pdf ---------- */
+function fmtDate(v){
+  if(!v) return "";
+  var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v);
+  return m ? m[2] + "/" + m[3] + "/" + m[1] : v;
+}
+function setText(form, name, value, centre){
+  if(!value) return;
+  try {
+    var f = form.getTextField(name);
+    f.setText(String(value));
+    if(centre && PDFLib.TextAlignment) f.setAlignment(PDFLib.TextAlignment.Center);
+  } catch(e){}
+}
+async function buildPdf(){
+  if(!window.PDFLib) throw new Error("PDF engine didn't load — check your signal and reload.");
+  var res = await fetch(TEMPLATE, {cache:"force-cache"});
+  if(!res.ok) throw new Error("Couldn't load the contract template (" + res.status + ").");
+  var doc = await PDFLib.PDFDocument.load(await res.arrayBuffer());
+  var form = doc.getForm(), page = doc.getPages()[0], st = collect();
+
+  ["Name","Address","City_Zip","Phone","Email","Job_Number","Work_Description",
+   "Contract_Total","Down_Payment_Amount","Final_Payment_Amount",
+   "ROW_Other"].forEach(function(id){ setText(form, id, st.f[id]); });
+  ["ExtSan_Length","ExtSan_Depth","ROW_Length","ROW_Width","Incidentals_Initials"]
+    .forEach(function(id){ setText(form, id, st.f[id], true); });
+  ["Date","Down_Payment_Date","Unpaid_Balance_Date","Final_Payment_Date","Final_Balance_Date"]
+    .forEach(function(id){ setText(form, id, fmtDate(st.f[id])); });
+  setText(form, "Unpaid_Balance_Amount", $("Unpaid_Balance_Amount").value);
+  setText(form, "Final_Balance_Amount",  $("Final_Balance_Amount").value);
+
+  SECTIONS.forEach(function(s){
+    if(st.secs[s.k]){ try { form.getCheckBox(s.c).check(); } catch(e){} }
+  });
+  Object.keys(st.items).forEach(function(f){ setText(form, f, st.items[f], true); });
+
+  // signatures drawn over their fields, then the whole form is flattened
+  var sigs = [["Serviceman_Signature", pads.sigA.inked()], ["Customer_Signature", pads.sigB.inked()]];
+  for(var i = 0; i < sigs.length; i++){
+    var name = sigs[i][0], url = sigs[i][1];
+    if(!url) continue;
+    var box;
+    try { box = form.getTextField(name).acroField.getWidgets()[0].getRectangle(); } catch(e){ continue; }
+    var png = await doc.embedPng(url);
+    var pad = 3;
+    var sc = Math.min((box.width - pad*2) / png.width, (box.height * 1.25) / png.height);
+    page.drawImage(png, {
+      x: box.x + pad,
+      y: box.y + 1.5,
+      width: png.width * sc,
+      height: png.height * sc
+    });
+  }
+  form.flatten();
+  return doc.save();
+}
+function fileName(){
+  var n = ($("Name").value || "contract").replace(/[^\w\s-]/g,"").trim().replace(/\s+/g,"-");
+  var j = $("Job_Number").value.replace(/[^\w-]/g,"");
+  var d = $("Date").value || new Date().toISOString().slice(0,10);
+  return "Lakeview-Contract-" + (j ? j + "-" : "") + n + "-" + d + ".pdf";
+}
+async function savePdf(){
+  var missing = ["Name","Address","Phone"].filter(function(id){ return !$(id).value.trim(); });
+  if(missing.length){
+    say("Still need: " + missing.join(", ").toLowerCase(), "err");
+    $(missing[0]).focus();
+    return;
+  }
+  var btn = $("btnPdf"); btn.disabled = true; btn.textContent = "BUILDING…"; say("");
+  try {
+    var bytes = await buildPdf();
+    var blob = new Blob([bytes], {type:"application/pdf"});
+    var name = fileName(), file = new File([blob], name, {type:"application/pdf"});
+    if(navigator.canShare && navigator.canShare({files:[file]})){
+      await navigator.share({files:[file], title:name});
+      say("Sent — save it to the job's Contract & Estimate folder.", "ok");
+    } else {
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob); a.download = name;
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
+      say("Saved to your downloads — drop it in the job's Contract & Estimate folder.", "ok");
+    }
+  } catch(err){
+    say(err.message || "Something went wrong building the PDF.", "err");
+  }
+  btn.disabled = false; btn.textContent = "SAVE PDF";
+}
+
+/* ---------- data export (for Keap) ---------- */
+function exportJson(){
+  var st = collect(); delete st.sig;
+  st.generated = new Date().toISOString();
+  var blob = new Blob([JSON.stringify(st, null, 2)], {type:"application/json"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = fileName().replace(/\.pdf$/, ".json");
+  document.body.appendChild(a); a.click(); a.remove();
+  say("Data file saved — this is what feeds Keap.", "ok");
+}
+
+/* ---------- wire up ---------- */
+$("btnPdf").addEventListener("click", savePdf);
+$("btnJson").addEventListener("click", exportJson);
+$("btnReset").addEventListener("click", function(){
+  if(!confirm("Clear this contract and start a new one?")) return;
+  try { localStorage.removeItem(KEY); } catch(e){}
+  location.reload();
+});
+window.addEventListener("beforeunload", function(){
+  try { localStorage.setItem(KEY, JSON.stringify(collect())); } catch(e){}
+});
+
+var had = restore();
+if(!$("Date").value) $("Date").value = new Date().toISOString().slice(0,10);
+SECTIONS.forEach(function(s){ count(s.k); });
+calc();
+if(had) say("Picked up where you left off. Hit NEW to start a fresh contract.");
+})();
+</script>
+</body></html>
