@@ -6,24 +6,25 @@
 <meta name="theme-color" content="#0b0d0b">
 <meta name="robots" content="noindex">
 <meta name="description" content="Lakeview Mechanical dig contract — fill it out on your phone, sign, and save the PDF.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310120d'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Arial,sans-serif' font-size='30' font-weight='900' fill='%23bac64a'%3ELM%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2310120d'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Arial,sans-serif' font-size='30' font-weight='900' fill='%2345cdd6'%3ELM%3C/text%3E%3C/svg%3E">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Dig Contract — Lakeview Mechanical</title>
 <style>
-:root{--bg:#090b09;--panel:#121512;--panel2:#171b17;--line:#2b302a;--text:#f3f3ed;--muted:#a7aba1;--olive:#9aa52d;--olive2:#bac64a;--max:820px;--radius:18px}
+:root{--bg:#090b09;--panel:#121512;--panel2:#171b17;--line:#2b302a;--text:#f3f3ed;--muted:#a7aba1;--olive:#10a0ab;--olive2:#45cdd6;--max:820px;--radius:18px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:#070807}
-body{margin:0;background:radial-gradient(circle at 75% 0%,#1a2016 0,#0b0d0b 35%,#070807 100%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;padding-bottom:128px}
+body{margin:0;background:radial-gradient(circle at 75% 0%,#0f2124 0,#0b0d0b 35%,#070807 100%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;padding-bottom:128px}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--max);margin:0 auto;padding:14px 12px 8px}
+.wrap{max-width:var(--max);margin:0 auto;padding:4px 12px 8px}
 
 /* header */
-.top{display:flex;align-items:center;gap:12px;padding:6px 2px 14px}
-.top img{width:170px;height:auto}
-.back{margin-left:auto;color:var(--muted);font-weight:800;font-size:13px;letter-spacing:.08em}
+.topbanner{background:rgba(9,11,9,.96);border-bottom:1px solid var(--line);padding:18px 26px 16px;margin-bottom:2px}
+.topbanner img{display:block;width:100%;max-width:520px;height:auto;margin:0 auto}
+.top{display:flex;align-items:center;gap:12px;padding:10px 2px 8px}
+.back{color:var(--muted);font-weight:800;font-size:13px;letter-spacing:.08em}
 .back:hover{color:var(--olive2)}
 .hero{padding:0 4px 14px}
 .eyebrow{color:var(--olive2);font-size:12px;font-weight:900;letter-spacing:.16em}
@@ -49,7 +50,7 @@ textarea{min-height:130px;resize:vertical;line-height:1.5}
 
 /* section switch */
 .sec{border:1px solid var(--line);border-radius:14px;background:#0e110e;margin:0 0 10px;overflow:hidden}
-.sec.on{border-color:#5c6626;background:#111510}
+.sec.on{border-color:#1a6b73;background:#111510}
 .sechead{display:flex;align-items:center;gap:13px;padding:14px 15px;cursor:pointer;user-select:none;min-height:60px}
 .sechead b{font-size:16px;letter-spacing:-.01em;flex:1}
 .sechead .count{font-size:12px;font-weight:800;color:var(--olive2);letter-spacing:.06em}
@@ -67,7 +68,7 @@ textarea{min-height:130px;resize:vertical;line-height:1.5}
 .item .lbl{font-weight:600;font-size:15px;letter-spacing:-.01em;color:#d7d9d1;overflow:hidden;text-overflow:ellipsis}
 .item.on .lbl{color:#fff}
 .item .qty{flex:none;width:80px;min-height:42px;padding:9px 8px;text-align:center;font-size:15px;font-weight:700;background:#0a0c0a}
-.item.on .qty{border-color:#5c6626}
+.item.on .qty{border-color:#1a6b73}
 
 /* payment */
 .paytable{display:grid;grid-template-columns:1.1fr 1fr 1.2fr;gap:8px;align-items:center}
@@ -98,13 +99,14 @@ canvas.sig{width:100%;height:150px;background:#fbfbf7;border:1px solid var(--lin
 .status.ok{color:var(--olive2)}
 .footer{color:#72776d;font-size:12px;text-align:center;line-height:1.7;padding:18px 12px 6px}
 @media(min-width:760px){.wrap{padding:20px 18px}.item .lbl{font-size:15px}}
+@media(max-width:700px){.topbanner{padding:13px 14px 12px}.topbanner img{max-width:none}}
 @media(max-width:420px){.paytable{grid-template-columns:1fr 1fr;row-gap:4px}.paytable .h.d{display:none}.paytable .rl{grid-column:1/-1;padding-top:8px}}
 </style>
 </head>
 <body>
+<header class="topbanner"><img src="lakeview-logo.svg" alt="Lakeview Mechanical"></header>
 <div class="wrap">
   <div class="top">
-    <img src="lakeview-logo-olive.png" alt="Lakeview Mechanical">
     <a class="back" href="index.html">← TEAM HUB</a>
   </div>
   <div class="hero">
