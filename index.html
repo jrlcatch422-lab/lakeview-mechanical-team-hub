@@ -59,15 +59,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--olive2);outline-off
   <div class="topbar">
     <div class="meta"><div>📅 <strong id="today">Today</strong></div></div>
   </div>
-  <!-- ============ TODAY STRIP ============
-       Plumbing jobs today per tech, OPEN / no-tech lines and "?" lines. Read-only page from the Plumbing Jobs app
-       (?view=today, app v9; &d=1 = tomorrow). Needs a signed-in @lakeviewmechanical.com account, same as the calendar.
-       The page posts its height, so the iframe fits. It reloads when the hub is reopened after 10+ minutes. -->
-  <section class="card" id="todaycard">
-    <div class="card-head"><h2>TODAY</h2><div class="tswitch" role="group" aria-label="Day"><button type="button" class="on" data-d="0">Today</button><button type="button" data-d="1">Tomorrow</button></div></div>
-    <div class="today-wrap"><iframe id="todayframe" src="https://script.google.com/a/macros/lakeviewmechanical.com/s/AKfycbyK_zPrUGtIpER4Sqn4XwTGCtVBRKZd-XTls1Ci866ZDZ0Z9pN9vYcLJ8Ww2mdcikXo/exec?view=today" title="Plumbing jobs today"></iframe><div class="today-foot"><span>Blank? Sign in with your company account.</span><a id="todayopen" href="https://script.google.com/a/macros/lakeviewmechanical.com/s/AKfycbyK_zPrUGtIpER4Sqn4XwTGCtVBRKZd-XTls1Ci866ZDZ0Z9pN9vYcLJ8Ww2mdcikXo/exec?view=today" target="_blank" rel="noopener">Open ↗</a></div></div>
-  </section>
-
   <section class="hero-title"><div class="eyebrow">FIELD TEAM</div><h1>Lakeview Team Hub</h1><p>Job tickets, schedule, team chat and company links in one place.</p></section>
 
   <!-- ============ JOB TICKETS ============
@@ -84,6 +75,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--olive2);outline-off
       <div class="tk"><a class="ticket" href="https://drive.google.com/drive/folders/1HDy8c8iXwbxf37Qg-9kcKVzkFJFyGMmJ" target="_blank" rel="noopener"><span class="tico">✓</span>CLOSED<span class="tsub">Finished jobs — closed out</span></a></div>
       <div class="tk"><a class="ticket" href="contract.html"><span class="tico">✎</span>DIG CONTRACT<span class="tsub">Fill in the sewer dig contract</span></a></div>
     </div>
+  </section>
+
+  <!-- ============ TODAY STRIP ============
+       Plumbing jobs today per tech, OPEN / no-tech lines and "?" lines. Read-only page from the Plumbing Jobs app
+       (?view=today, app v9; &d=1 = tomorrow). Needs a signed-in @lakeviewmechanical.com account, same as the calendar.
+       The page posts its height, so the iframe fits. It reloads when the hub is reopened after 10+ minutes.
+       Sits under Job Tickets (his action tiles stay first); phone nav "Schedule" jumps here, calendar is right below. -->
+  <section class="card" id="todaycard">
+    <div class="card-head"><h2>TODAY</h2><div class="tswitch" role="group" aria-label="Day"><button type="button" class="on" data-d="0">Today</button><button type="button" data-d="1">Tomorrow</button></div></div>
+    <div class="today-wrap"><iframe id="todayframe" src="https://script.google.com/a/macros/lakeviewmechanical.com/s/AKfycbyK_zPrUGtIpER4Sqn4XwTGCtVBRKZd-XTls1Ci866ZDZ0Z9pN9vYcLJ8Ww2mdcikXo/exec?view=today" title="Plumbing jobs today"></iframe><div class="today-foot"><span>Blank? Sign in with your company account.</span><a id="todayopen" href="https://script.google.com/a/macros/lakeviewmechanical.com/s/AKfycbyK_zPrUGtIpER4Sqn4XwTGCtVBRKZd-XTls1Ci866ZDZ0Z9pN9vYcLJ8Ww2mdcikXo/exec?view=today" target="_blank" rel="noopener">Open ↗</a></div></div>
   </section>
 
   <section class="card" id="calendar">
@@ -119,7 +120,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--olive2);outline-off
   <div class="footer">Lakeview Mechanical Team Hub • Built for the field<br>24400 Mound Rd, Warren, MI 48091 • <a href="tel:+15867572700">(586) 757-2700</a></div>
 </main>
 </div>
-<nav class="mobile-nav"><a class="active" href="#jobs"><span class="icon">▣</span>Jobs</a><a href="#calendar"><span class="icon">▦</span>Schedule</a><a class="call" href="tel:+15867572700" aria-label="Call the office"><span class="icon">✆</span>Call</a><a href="#chat"><span class="icon">💬</span>Chat</a><a href="contract.html"><span class="icon">✎</span>Contract</a></nav>
+<nav class="mobile-nav"><a class="active" href="#jobs"><span class="icon">▣</span>Jobs</a><a href="#todaycard"><span class="icon">▦</span>Schedule</a><a class="call" href="tel:+15867572700" aria-label="Call the office"><span class="icon">✆</span>Call</a><a href="#chat"><span class="icon">💬</span>Chat</a><a href="contract.html"><span class="icon">✎</span>Contract</a></nav>
 <script>
 (function(){
   // Live date in the top bar
@@ -155,11 +156,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--olive2);outline-off
   }
 
   // Highlight the section you're on (sidebar + bottom nav)
-  var ids=['links','chat','calendar','jobs','home'];
+  var ids=['links','chat','calendar','todaycard','jobs','home'];
+  var same={todaycard:'sched',calendar:'sched'}; // Today strip + Calendar light up the same nav item (Schedule / Calendar)
   var navLinks=document.querySelectorAll('.nav a, .mobile-nav a');
   var pinned=null; // section chosen by tapping the nav; wins until the user scrolls manually
   function setActive(id){
-    navLinks.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id);});
+    navLinks.forEach(function(a){var h=(a.getAttribute('href')||'').slice(1);a.classList.toggle('active',h===id||(!!same[id]&&same[h]===same[id]));});
   }
   navLinks.forEach(function(a){
     a.addEventListener('click',function(){
