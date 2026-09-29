@@ -61,27 +61,28 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--olive2);outline-off
   <section class="hero-title"><div class="eyebrow">FIELD TEAM</div><h1>Lakeview Team Hub</h1><p>Job tickets, schedule, team chat and company links in one place.</p></section>
 
   <!-- ============ JOB TICKETS ============
-       NEW opens contract.html (fill out a fresh dig contract on the phone).
-       EXISTING opens Drive > Lakeview Mechanical > Jobs > ACTIVE (all open tickets).
-       CLOSED opens Drive > Jobs > COMPLETED (finished jobs). No per-job rows on this page. -->
+       NEW opens the Plumbing Jobs app (Apps Script, runs as office@; sign in with the @lakeviewmechanical.com
+       account): new job = folder + calendar event + Job Index row + Chat space.
+       EXISTING opens Plumbing shared drive > Jobs > ACTIVE. CLOSED opens Plumbing shared drive > Jobs > COMPLETED.
+       Dig Contract stays in the sidebar. -->
   <section class="card" id="jobs">
     <div class="card-head"><h2>JOB TICKETS</h2></div>
     <div class="tickets">
-      <a class="ticket new" href="contract.html"><span class="tico">＋</span>NEW<span class="tsub">Start a new contract</span></a>
-      <a class="ticket" href="https://drive.google.com/drive/folders/1UR_NMwmAZP2yrKOITE_aC3TFi8DnujXs" target="_blank" rel="noopener"><span class="tico">▣</span>EXISTING<span class="tsub">Open tickets — jobs in progress</span></a>
-      <a class="ticket" href="https://drive.google.com/drive/folders/1pmohUYNwKMNFLNPg5DOfJS49hHUanrQz" target="_blank" rel="noopener"><span class="tico">✓</span>CLOSED<span class="tsub">Finished jobs — closed out</span></a>
+      <a class="ticket new" href="https://script.google.com/a/macros/lakeviewmechanical.com/s/AKfycbyK_zPrUGtIpER4Sqn4XwTGCtVBRKZd-XTls1Ci866ZDZ0Z9pN9vYcLJ8Ww2mdcikXo/exec" target="_blank" rel="noopener"><span class="tico">＋</span>NEW<span class="tsub">Start a new job</span></a>
+      <a class="ticket" href="https://drive.google.com/drive/folders/1zpZRg5ZqjejHDNozjh4TvLBqZ0RF4xan" target="_blank" rel="noopener"><span class="tico">▣</span>EXISTING<span class="tsub">Open tickets — jobs in progress</span></a>
+      <a class="ticket" href="https://drive.google.com/drive/folders/1HDy8c8iXwbxf37Qg-9kcKVzkFJFyGMmJ" target="_blank" rel="noopener"><span class="tico">✓</span>CLOSED<span class="tsub">Finished jobs — closed out</span></a>
     </div>
   </section>
 
   <section class="card" id="calendar">
-    <div class="card-head"><h2>CALENDAR</h2><span class="muted">Lakeview schedule</span></div>
-    <div class="calendar-wrap"><div class="calendar-frame"><iframe id="calframe" loading="lazy" src="https://calendar.google.com/calendar/embed?src=83affa80cdbe9f6c55288dfc4f0a24f45eb5c6b5d7c63eb00c249c5b93ba069e%40group.calendar.google.com&ctz=America%2FDetroit" title="Lakeview Mechanical calendar"></iframe></div><div class="cal-foot"><a href="https://calendar.google.com/calendar/embed?src=83affa80cdbe9f6c55288dfc4f0a24f45eb5c6b5d7c63eb00c249c5b93ba069e%40group.calendar.google.com&ctz=America%2FDetroit" target="_blank" rel="noopener">Open full calendar ↗</a></div></div>
+    <div class="card-head"><h2>CALENDAR</h2><span class="muted">Lakeview – Plumbing</span></div>
+    <div class="calendar-wrap"><div class="calendar-frame"><iframe id="calframe" loading="lazy" src="https://calendar.google.com/calendar/embed?src=c_cd3f112168498be83ddd772347f1c4e048806df3467ce5b545200aac8bba60b1%40group.calendar.google.com&ctz=America%2FDetroit" title="Lakeview – Plumbing calendar"></iframe></div><div class="cal-foot"><a href="https://calendar.google.com/calendar/embed?src=c_cd3f112168498be83ddd772347f1c4e048806df3467ce5b545200aac8bba60b1%40group.calendar.google.com&ctz=America%2FDetroit" target="_blank" rel="noopener">Open full calendar ↗</a></div></div>
   </section>
 
   <section class="card" id="chat">
     <div class="card-head"><h2>TEAM CHAT</h2><span class="muted">Forum style</span></div>
     <div class="chat-body">
-      <p><b>Each job gets its own space</b> in Google Chat — chat and photo sharing inside, named after the job ticket. Open Chat, hit <b>Spaces</b>, and pick your job.</p>
+      <p><b>Each job gets its own space</b> in Google Chat — chat and photo sharing inside, made automatically when a job is created and named after the job number. Open Chat, hit <b>Spaces</b>, and pick your job — or tap <b>Chat</b> on the job card in EXISTING.</p>
       <a class="btn" href="https://chat.google.com" target="_blank" rel="noopener">OPEN TEAM CHAT →</a>
     </div>
   </section>
