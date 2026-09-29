@@ -504,20 +504,77 @@ $("Job_Number").addEventListener("blur", function(){
 });
 $("btnPdf").addEventListener("click", savePdf);
 $("btnJson").addEventListener("click", exportJson);
+var noSave = false; // set before a reload that must not re-save the form (NEW / BRING BACK)
 $("btnReset").addEventListener("click", function(){
   if(!confirm("Clear this contract and start a new one?")) return;
+  noSave = true;
   try { localStorage.removeItem(KEY); } catch(e){}
   location.reload();
 });
 window.addEventListener("beforeunload", function(){
+  if(noSave) return;
   try { localStorage.setItem(KEY, JSON.stringify(collect())); } catch(e){}
 });
 
+/* ---------- pre-fill from a Plumbing app job card (#job=...) ----------
+   The job details ride in the # part of the link: browsers never send that part to a server
+   (not to GitHub, not in Referer). It is removed from the address bar right away. */
+function today(){
+  var d = new Date();
+  return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0");
+}
+function readJob(){
+  var m = /(?:^#|&)job=([A-Za-z0-9_-]+)/.exec(location.hash || "");
+  if(!m) return null;
+  try { history.replaceState(null, "", location.pathname + location.search); } catch(e){}
+  try {
+    var s = m[1].replace(/-/g,"+").replace(/_/g,"/");
+    while(s.length % 4) s += "=";
+    var o = JSON.parse(decodeURIComponent(escape(atob(s))));
+    return (o && typeof o === "object") ? o : null;
+  } catch(e){ return null; }
+}
+window.addEventListener("hashchange", function(){ if(/job=/.test(location.hash)) location.reload(); }); // tapped Contract again while this page was open
+var job = readJob(), same = false, parked = "";
+if(job){
+  var old = null; try { old = JSON.parse(localStorage.getItem(KEY) || "null"); } catch(e){}
+  var of = (old && old.f) || {};
+  same = !!(job.j && of.Job_Number && String(of.Job_Number).toUpperCase() === String(job.j).toUpperCase());
+  if(!same){
+    if(of.Name || of.Address){
+      try { localStorage.setItem(KEY + ":prev", JSON.stringify(old)); parked = of.Name || of.Address; } catch(e){}
+    }
+    try { localStorage.removeItem(KEY); } catch(e){}
+  }
+}
+
 var had = restore();
-if(!$("Date").value) $("Date").value = new Date().toISOString().slice(0,10);
+if(job){
+  [["Name","n"],["Address","a"],["City_Zip","c"],["Phone","p"],["Job_Number","j"]].forEach(function(x){
+    if($(x[0]) && !$(x[0]).value && job[x[1]]) $(x[0]).value = String(job[x[1]]).slice(0, 200);
+  });
+  if(!same || !$("Date").value) $("Date").value = today();
+}
+if(!$("Date").value) $("Date").value = today();
 SECTIONS.forEach(function(s){ count(s.k); });
 calc();
-if(had) say("Picked up where you left off. Hit NEW to start a fresh contract.");
+if(job){
+  try { localStorage.setItem(KEY, JSON.stringify(collect())); } catch(e){}
+  say(same ? "Picked up this job's contract where you left off."
+           : "Filled in from job " + (job.j || "") + " — check the details with the customer.", "ok");
+  if(parked){
+    status.appendChild(document.createTextNode(" Earlier contract (" + parked + ") put aside. "));
+    var bb = document.createElement("button");
+    bb.type = "button"; bb.className = "clr"; bb.id = "btnPrev"; bb.style.minHeight = "44px"; bb.textContent = "BRING IT BACK";
+    bb.addEventListener("click", function(){
+      if(!confirm("Switch back to the earlier contract (" + parked + ")? This job's contract can be opened again from its job card.")) return;
+      noSave = true;
+      try { localStorage.setItem(KEY, localStorage.getItem(KEY + ":prev")); localStorage.removeItem(KEY + ":prev"); } catch(e){}
+      location.reload();
+    });
+    status.appendChild(bb);
+  }
+} else if(had) say("Picked up where you left off. Hit NEW to start a fresh contract.");
 })();
 </script>
 </body></html>
