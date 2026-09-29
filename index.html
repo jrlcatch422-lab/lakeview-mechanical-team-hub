@@ -18,26 +18,32 @@
 :root{--bg:#090b09;--panel:#121512;--panel2:#171b17;--line:#2b302a;--text:#f3f3ed;--muted:#a7aba1;--olive:#10a0ab;--olive2:#45cdd6;--max:1100px;--radius:18px}
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 75% 0%,#0f2124 0,#0b0d0b 35%,#070807 100%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
 body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.08;background-image:linear-gradient(115deg,transparent 0 48%,#fff 49%,transparent 50%),linear-gradient(25deg,transparent 0 48%,#fff 49%,transparent 50%);background-size:120px 120px;mix-blend-mode:screen}
-a{color:inherit;text-decoration:none}.topbanner{position:relative;z-index:15;background:rgba(9,11,9,.96);border-bottom:1px solid var(--line);padding:18px 26px 16px}.topbanner img{display:block;width:100%;max-width:520px;height:auto;margin:0 auto}.shell{display:flex;min-height:calc(100vh - 96px)}.sidebar{width:250px;background:rgba(9,11,9,.96);border-right:1px solid var(--line);padding:24px 18px;display:flex;flex-direction:column;position:sticky;top:0;align-self:flex-start;min-height:calc(100vh - 96px);z-index:10}.hub-label{color:var(--olive2);font-size:12px;font-weight:900;letter-spacing:.2em;margin:0 0 20px;padding:0 0 18px;border-bottom:1px solid var(--line)}.nav{display:grid;gap:8px}.nav a{display:flex;align-items:center;gap:14px;padding:15px 14px;border-radius:12px;color:#ddd;font-weight:700;letter-spacing:.03em}.nav a:hover,.nav a.active{background:linear-gradient(90deg,#0d4f55,#14282b);color:#fff}.icon{width:24px;text-align:center;font-size:20px}.side-note{margin-top:auto;padding:22px 12px 8px;color:#d8d9d2;font-weight:800;line-height:1.25}.side-note span{color:var(--olive2)}
-.main{flex:1;min-width:0;padding:22px 28px 40px}.topbar{max-width:var(--max);margin:auto;display:flex;align-items:center;justify-content:flex-end;gap:20px;padding:6px 0 10px}.meta{display:flex;align-items:center;gap:24px;color:var(--muted);font-size:14px}.meta strong{color:#fff;font-size:18px}.eyebrow{color:var(--olive2);font-size:13px;font-weight:900;letter-spacing:.14em}.hero-title{max-width:var(--max);margin:0 auto 20px}.hero-title h1{font-size:clamp(30px,4vw,48px);margin:2px 0 0;letter-spacing:-.03em;line-height:1}.hero-title p{color:var(--muted);margin:9px 0 0;font-size:15px}
+a{color:inherit;text-decoration:none}.topbanner{position:relative;z-index:15;background:rgba(9,11,9,.96);border-bottom:1px solid var(--line);padding:18px 26px 16px}.topbanner img{display:block;width:100%;max-width:520px;height:auto;margin:0 auto}.shell{display:flex;min-height:calc(100vh - 96px)}.sidebar{width:250px;background:rgba(9,11,9,.96);border-right:1px solid var(--line);padding:24px 18px;display:flex;flex-direction:column;position:sticky;top:0;align-self:flex-start;min-height:calc(100vh - 96px);z-index:10}.hub-label{color:var(--olive2);font-size:12px;font-weight:900;letter-spacing:.2em;margin:0 0 20px;padding:0 0 18px;border-bottom:1px solid var(--line)}.nav{display:grid;gap:8px}.nav a{display:flex;align-items:center;gap:14px;padding:15px 14px;min-height:44px;border-radius:12px;color:#ddd;font-weight:700;letter-spacing:.03em}.nav a:hover,.nav a.active{background:linear-gradient(90deg,#0d4f55,#14282b);color:#fff}.nav a.call{background:var(--olive);color:#10120d;font-weight:900}.nav a.call:hover{background:var(--olive2)}.nav a.call small{display:block;font-size:12px;font-weight:700;letter-spacing:0;opacity:.8}.icon{width:24px;text-align:center;font-size:20px}
+.main{flex:1;min-width:0;padding:22px 28px 40px}
 .card{max-width:var(--max);margin:0 auto 18px;background:linear-gradient(145deg,rgba(25,29,24,.98),rgba(12,14,12,.98));border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 16px 40px rgba(0,0,0,.28);overflow:hidden}.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px 14px}.card-head h2{margin:0;font-size:16px;letter-spacing:.12em;color:var(--olive2)}.muted{color:var(--muted)}
-.subhead{padding:2px 20px 8px;color:var(--muted);font-size:12px;letter-spacing:.16em;font-weight:800}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 18px;background:var(--olive);color:#10120d;border-radius:10px;font-weight:900;letter-spacing:.03em;min-height:48px}.btn:hover{background:var(--olive2)}.btn.small{padding:9px 14px;min-height:40px;font-size:13px}.btn.secondary{background:#1d211b;color:#eee;border:1px solid #3a4034}.btn.secondary:hover{background:#2a3023}.btn.ghost{background:rgba(16,18,13,.72);color:#fff;border:1px solid var(--olive)}.btn.ghost:hover{background:rgba(16,74,80,.8)}
-.tickets{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;padding:4px 18px 18px}.tk{grid-column:span 2;display:flex;flex-direction:column;min-width:0}.tk:nth-child(n+4){grid-column:span 3}.tk .ticket{flex:1}.tfolder{align-self:flex-start;margin:4px 0 0 6px;padding:10px 8px;min-height:44px;display:inline-flex;align-items:center;font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em}.tfolder:hover{color:var(--olive2)}.ticket{display:flex;flex-direction:column;justify-content:center;gap:5px;min-height:140px;padding:20px 22px;border-radius:14px;border:1px solid var(--line);background:#0e110e;font-weight:600;font-size:19px;letter-spacing:.3em;text-transform:uppercase;transition:.15s}.ticket:hover{border-color:#1d6a72;transform:translateY(-2px)}.ticket .tico{font-size:24px;color:var(--olive2);line-height:1;letter-spacing:0}.ticket .tsub{font-size:12.5px;font-weight:500;color:var(--muted);letter-spacing:.02em;text-transform:none;margin-top:3px}.ticket.new{background:linear-gradient(135deg,rgba(69,205,214,.17),rgba(69,205,214,.03));border:1px solid rgba(69,205,214,.55);color:#eafcfd}.ticket.new:hover{border-color:var(--olive2)}.ticket.new .tsub{color:#8fb9bd}
-
-.pastjobs{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 18px 18px;padding:15px 16px;border:1px dashed #3a4034;border-radius:12px;color:var(--muted)}.pastjobs b{color:#e8e9e2}
-.calendar-wrap{padding:0 18px 18px}.calendar-frame{width:100%;height:560px;border:1px solid var(--line);border-radius:14px;background:#fff}.calendar-frame iframe{width:100%;height:100%;border:0;border-radius:14px}.cal-foot{display:flex;justify-content:flex-end;padding:10px 2px 0}.cal-foot a{color:var(--muted);font-size:13px;font-weight:700}.cal-foot a:hover{color:var(--olive2)}
-.chat-body{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:4px 20px 20px}.chat-body p{margin:0;color:var(--muted);max-width:560px;line-height:1.55}.chat-body p b{color:#e8e9e2}
-.link-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:0 18px 14px}.link-grid a{padding:16px;border:1px solid var(--line);border-radius:12px;background:#0d100d;min-height:54px}.link-grid a:hover{border-color:#1d6a72}.link-grid b{display:block}.link-grid span{font-size:12px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:13px 18px;background:var(--olive);color:#10120d;border-radius:10px;font-weight:900;letter-spacing:.03em;min-height:48px}.btn:hover{background:var(--olive2)}
+/* BOOK A JOB + OPEN JOBS tiles */
+.bigwrap{max-width:var(--max);margin:0 auto 18px}
+.ticket{display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:140px;padding:22px 26px;border-radius:var(--radius);border:1px solid var(--line);background:#0e110e;font-weight:600;font-size:19px;letter-spacing:.3em;text-transform:uppercase;transition:.15s}.ticket:hover{border-color:#1d6a72;transform:translateY(-2px)}.ticket .tico{font-size:26px;color:var(--olive2);line-height:1;letter-spacing:0}.ticket .tsub{font-size:13px;font-weight:500;color:var(--muted);letter-spacing:.02em;text-transform:none}
+.ticket.book{min-height:170px;font-size:30px;font-weight:800;letter-spacing:.22em;background:linear-gradient(135deg,rgba(69,205,214,.24),rgba(69,205,214,.05));border:1.5px solid rgba(69,205,214,.7);color:#eafcfd;box-shadow:0 16px 40px rgba(0,0,0,.28)}.ticket.book:hover{border-color:var(--olive2)}.ticket.book .tico{font-size:34px}.ticket.book .tsub{color:#9fcdd1;font-size:15px}
+.jobs-body{padding:0 18px 12px}.tfolder{display:inline-flex;align-items:center;min-height:44px;margin:2px 0 0 6px;padding:0 8px;font-size:13px;font-weight:700;color:var(--muted);letter-spacing:.04em}.tfolder:hover{color:var(--olive2)}
+/* TODAY strip */
+.today-wrap{padding:0 18px 12px}.today-wrap iframe{display:block;width:100%;height:240px;border:0;border-radius:12px;background:#121512}.today-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:6px 2px 0;font-size:12px;color:#72776d}.today-foot a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;color:var(--muted);font-weight:700;font-size:13px;white-space:nowrap}.today-foot a:hover{color:var(--olive2)}.tswitch{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}.tswitch button{background:#0d100d;color:var(--muted);border:0;font:inherit;font-size:13px;font-weight:800;letter-spacing:.04em;padding:9px 14px;min-height:44px;cursor:pointer}.tswitch button.on{background:#0d4f55;color:#fff}
+/* Calendar */
+.calendar-wrap{padding:0 18px 18px}.calendar-frame{width:100%;height:560px;border:1px solid var(--line);border-radius:14px;background:#fff}.calendar-frame iframe{width:100%;height:100%;border:0;border-radius:14px}.cal-foot{display:flex;justify-content:flex-end;padding:6px 2px 0}.cal-foot a{display:inline-flex;align-items:center;min-height:44px;color:var(--muted);font-size:13px;font-weight:700}.cal-foot a:hover{color:var(--olive2)}
+/* MORE (collapsed) */
+.more summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;padding:14px 20px;cursor:pointer}.more summary::-webkit-details-marker{display:none}.more summary h2{margin:0;font-size:16px;letter-spacing:.12em;color:var(--olive2)}.more summary .muted{font-size:13px;flex:1;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.more summary .chev{color:var(--olive2);font-size:18px;transition:transform .15s}.more[open] summary .chev{transform:rotate(180deg)}.more[open] summary{border-bottom:1px solid var(--line)}
+.sub{padding:14px 20px 8px;color:var(--muted);font-size:12px;letter-spacing:.16em;font-weight:800}
+.link-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:0 18px 14px}.link-grid a{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:#0d100d;min-height:54px}.link-grid a:hover{border-color:#1d6a72}.link-grid b{display:block}.link-grid span{font-size:12px;color:var(--muted)}
 .qr-card{display:flex;gap:18px;align-items:center;background:#fff;color:#10120d;border-radius:14px;padding:16px 18px;margin:4px 18px 18px}.qr-card img{width:132px;height:132px;flex:none}.qr-card b{display:block;font-size:17px;margin-bottom:4px}.qr-card p{margin:0;font-size:14px;color:#3a3d35;line-height:1.5}
-.footer{max-width:var(--max);margin:26px auto 0;color:#72776d;font-size:12px;text-align:center;line-height:1.7}.footer a{color:#9aa08f}.footer a:hover{color:var(--olive2)}
-.today-wrap{padding:0 18px 12px}.today-wrap iframe{display:block;width:100%;height:240px;border:0;border-radius:12px;background:#121512}.today-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:6px 2px 0;font-size:12px;color:#72776d}.today-foot a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px;color:var(--muted);font-weight:700;font-size:13px;white-space:nowrap}.today-foot a:hover{color:var(--olive2)}.tswitch{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}.tswitch button{background:#0d100d;color:var(--muted);border:0;font:inherit;font-size:13px;font-weight:800;letter-spacing:.04em;padding:9px 14px;min-height:40px;cursor:pointer}.tswitch button.on{background:#0d4f55;color:#fff}
+.footer{max-width:var(--max);margin:26px auto 0;color:#72776d;font-size:12px;text-align:center;line-height:1.7}
 .mobile-nav{display:none}
-section[id],main[id]{scroll-margin-top:16px}
-a:focus-visible,button:focus-visible{outline:2px solid var(--olive2);outline-offset:2px;border-radius:6px}
-@media(max-width:1000px){.sidebar{width:215px}.main{padding:18px}.calendar-frame{height:520px}.meta{display:none}}
-@media(max-width:700px){body{padding-bottom:92px}.sidebar{display:none}.shell{min-height:0}.main{padding:12px 12px 24px}.topbanner{padding:13px 14px 12px}.topbanner img{max-width:none}.topbar{padding:5px 2px 10px;justify-content:flex-end}.meta{display:flex;gap:0}.meta strong{font-size:15px}.hero-title{padding:0 4px 10px;margin-bottom:2px}.hero-title h1{font-size:26px}.hero-title p{font-size:13px;margin-top:5px}.tickets{grid-template-columns:1fr;gap:10px;padding:2px 12px 14px}.tk,.tk:nth-child(n+4){grid-column:auto}.ticket{min-width:0}.ticket{min-height:92px;padding:16px 18px;font-size:17px;letter-spacing:.26em;flex-direction:row;align-items:center;justify-content:flex-start;gap:13px;flex-wrap:wrap}.ticket .tico{font-size:21px}.ticket .tsub{flex-basis:100%;margin-top:0}.card-head{padding:15px 14px 10px}.subhead{padding:2px 14px 6px}.pastjobs{margin:10px 12px 14px;flex-wrap:wrap}.today-wrap{padding:0 10px 10px}.today-wrap iframe{height:330px}.calendar-wrap{padding:0 10px 10px}.calendar-frame{height:500px}.chat-body{padding:2px 14px 16px}.link-grid{grid-template-columns:1fr;padding:0 10px 10px}.qr-card{margin:4px 10px 14px}.qr-card img{width:112px;height:112px}.btn{padding:12px 15px}.footer{padding:0 12px}
+section[id],details[id],div[id],a[id]{scroll-margin-top:16px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--olive2);outline-offset:2px;border-radius:6px}
+@media(max-width:1000px){.sidebar{width:215px}.main{padding:18px}.calendar-frame{height:520px}}
+@media(max-width:700px){body{padding-bottom:92px}.sidebar{display:none}.shell{min-height:0}.main{padding:12px 12px 24px}.topbanner{padding:13px 14px 12px}.topbanner img{max-width:none}.bigwrap{margin-bottom:12px}.ticket{min-height:92px;padding:16px 18px;font-size:17px;letter-spacing:.24em;flex-direction:row;align-items:center;justify-content:flex-start;gap:13px;flex-wrap:wrap}.ticket .tico{font-size:21px}.ticket .tsub{flex-basis:100%}.ticket.book{min-height:132px;font-size:25px;letter-spacing:.18em}.ticket.book .tico{font-size:28px}.ticket.book .tsub{font-size:14px}.card{margin-bottom:12px}.card-head{padding:15px 14px 10px}.jobs-body{padding:0 10px 8px}.today-wrap{padding:0 10px 10px}.today-wrap iframe{height:330px}.calendar-wrap{padding:0 10px 10px}.calendar-frame{height:500px}.more summary{padding:12px 14px}.sub{padding:12px 14px 6px}.link-grid{grid-template-columns:1fr;padding:0 10px 10px}.qr-card{margin:4px 10px 14px}.qr-card img{width:112px;height:112px}.footer{padding:0 12px}
 .mobile-nav{position:fixed;display:grid;grid-template-columns:repeat(5,1fr);left:0;right:0;bottom:0;height:70px;background:rgba(9,11,9,.97);border-top:1px solid var(--line);z-index:20;padding-bottom:env(safe-area-inset-bottom)}.mobile-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10px;color:#aaa}.mobile-nav a.active,.mobile-nav a:hover{color:var(--olive2)}.mobile-nav .icon{font-size:19px;width:auto}.mobile-nav a.call{color:var(--olive2);font-weight:800}.mobile-nav a.call .icon{display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--olive);color:#10120d;font-size:25px;margin-top:-30px;border:4px solid #0b0d0b;box-shadow:0 6px 18px rgba(0,0,0,.55)}}
+@media(max-width:340px){.ticket.book{font-size:21px;letter-spacing:.14em}.more summary .muted{display:none}}
 </style>
 </head>
 <body>
@@ -46,62 +52,60 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--olive2);outline-off
 <aside class="sidebar">
   <div class="hub-label">TEAM HUB</div>
   <nav class="nav">
-    <a class="active" href="#home"><span class="icon">⌂</span>Home</a>
-    <a href="#jobs"><span class="icon">▣</span>Job Tickets</a>
-    <a href="contract.html"><span class="icon">✎</span>Dig Contract</a>
-    <a href="#calendar"><span class="icon">▦</span>Calendar</a>
-    <a href="#chat"><span class="icon">💬</span>Team Chat</a>
-    <a href="#links"><span class="icon">↗</span>Links</a>
+    <a class="active" href="#book"><span class="icon">＋</span>Book a Job</a>
+    <a href="#todaycard"><span class="icon">◷</span>Today</a>
+    <a class="call" href="tel:+15867572700"><span class="icon">✆</span><span>Call Office<small>(586) 757-2700 · 24-hr</small></span></a>
+    <a href="#jobs"><span class="icon">▣</span>Open Jobs</a>
+    <a href="#more"><span class="icon">☰</span>More</a>
   </nav>
-  <div class="side-note">BUILT ON<br>EXPERIENCE.<br>FOCUSED ON <span>RESULTS.</span></div>
 </aside>
 <main class="main" id="home">
-  <div class="topbar">
-    <div class="meta"><div>📅 <strong id="today">Today</strong></div></div>
+
+  <!-- Order follows Justin's day (Sep 29): BOOK A JOB → TODAY → OPEN JOBS → Calendar → More (collapsed).
+       Each item appears once. App tiles open the Plumbing Jobs app (Apps Script, runs as office@; sign in with the
+       @lakeviewmechanical.com account). ?u=Justin&go=new = office booking mode; ?go=jobs = job cards; ?tech=Justin = My day. -->
+
+  <!-- ============ 1. BOOK A JOB ============ -->
+  <div class="bigwrap" id="book">
+    <a class="ticket book" href="https://script.google.com/a/macros/lakeviewmechanical.com/s/AKfycbyK_zPrUGtIpER4Sqn4XwTGCtVBRKZd-XTls1Ci866ZDZ0Z9pN9vYcLJ8Ww2mdcikXo/exec?u=Justin&amp;go=new" target="_blank" rel="noopener"><span class="tico">＋</span>BOOK A JOB<span class="tsub">Take a call, book a tech</span></a>
   </div>
-  <section class="hero-title"><div class="eyebrow">FIELD TEAM</div><h1>Lakeview Team Hub</h1><p>Job tickets, schedule, team chat and company links in one place.</p></section>
 
-  <!-- ============ JOB TICKETS ============
-       Justin takes calls and books techs himself. All app tiles open the Plumbing Jobs app (Apps Script, runs as office@;
-       sign in with the @lakeviewmechanical.com account). ?go=new / ?go=jobs pick the screen (v8); ?u=Justin = office booking mode;
-       ?tech=Justin = My day. OPEN JOBS has a small Open folder link (Plumbing drive > Jobs > ACTIVE). CLOSED = Jobs > COMPLETED.
-       DIG CONTRACT = contract.html (also stays in the sidebar). -->
-  <section class="card" id="jobs">
-    <div class="card-head"><h2>JOB TICKETS</h2></div>
-    <div class="tickets">
-      <div class="tk"><a class="ticket new" href="https://script.google.com/a/macros/lakeviewmechanical.com/s/AKfycbyK_zPrUGtIpER4Sqn4XwTGCtVBRKZd-XTls1Ci866ZDZ0Z9pN9vYcLJ8Ww2mdcikXo/exec?u=Justin&amp;go=new" target="_blank" rel="noopener"><span class="tico">＋</span>BOOK A JOB<span class="tsub">Take a call, book a tech</span></a></div>
-      <div class="tk"><a class="ticket" href="https://script.google.com/a/macros/lakeviewmechanical.com/s/AKfycbyK_zPrUGtIpER4Sqn4XwTGCtVBRKZd-XTls1Ci866ZDZ0Z9pN9vYcLJ8Ww2mdcikXo/exec?tech=Justin" target="_blank" rel="noopener"><span class="tico">◷</span>MY DAY<span class="tsub">Your jobs today and tomorrow</span></a></div>
-      <div class="tk"><a class="ticket" href="https://script.google.com/a/macros/lakeviewmechanical.com/s/AKfycbyK_zPrUGtIpER4Sqn4XwTGCtVBRKZd-XTls1Ci866ZDZ0Z9pN9vYcLJ8Ww2mdcikXo/exec?go=jobs" target="_blank" rel="noopener"><span class="tico">▣</span>OPEN JOBS<span class="tsub">Call · Map · Photos · Close</span></a><a class="tfolder" href="https://drive.google.com/drive/folders/1zpZRg5ZqjejHDNozjh4TvLBqZ0RF4xan" target="_blank" rel="noopener">Open folder ↗</a></div>
-      <div class="tk"><a class="ticket" href="https://drive.google.com/drive/folders/1HDy8c8iXwbxf37Qg-9kcKVzkFJFyGMmJ" target="_blank" rel="noopener"><span class="tico">✓</span>CLOSED<span class="tsub">Finished jobs — closed out</span></a></div>
-      <div class="tk"><a class="ticket" href="contract.html"><span class="tico">✎</span>DIG CONTRACT<span class="tsub">Fill in the sewer dig contract</span></a></div>
-    </div>
-  </section>
-
-  <!-- ============ TODAY STRIP ============
+  <!-- ============ 2. TODAY STRIP ============
        Plumbing jobs today per tech, OPEN / no-tech lines and "?" lines. Read-only page from the Plumbing Jobs app
-       (?view=today, app v9; &d=1 = tomorrow). Needs a signed-in @lakeviewmechanical.com account, same as the calendar.
-       The page posts its height, so the iframe fits. It reloads when the hub is reopened after 10+ minutes.
-       Sits under Job Tickets (his action tiles stay first); phone nav "Schedule" jumps here, calendar is right below. -->
+       (?view=today, app v10; &d=1 = tomorrow). Needs a signed-in @lakeviewmechanical.com account, same as the calendar.
+       The page posts its height, so the iframe fits. It reloads when the hub is reopened after 10+ minutes. -->
   <section class="card" id="todaycard">
     <div class="card-head"><h2>TODAY</h2><div class="tswitch" role="group" aria-label="Day"><button type="button" class="on" data-d="0">Today</button><button type="button" data-d="1">Tomorrow</button></div></div>
     <div class="today-wrap"><iframe id="todayframe" src="https://script.google.com/a/macros/lakeviewmechanical.com/s/AKfycbyK_zPrUGtIpER4Sqn4XwTGCtVBRKZd-XTls1Ci866ZDZ0Z9pN9vYcLJ8Ww2mdcikXo/exec?view=today" title="Plumbing jobs today"></iframe><div class="today-foot"><span>Blank? Sign in with your company account.</span><a id="todayopen" href="https://script.google.com/a/macros/lakeviewmechanical.com/s/AKfycbyK_zPrUGtIpER4Sqn4XwTGCtVBRKZd-XTls1Ci866ZDZ0Z9pN9vYcLJ8Ww2mdcikXo/exec?view=today" target="_blank" rel="noopener">Open ↗</a></div></div>
   </section>
 
+  <!-- ============ 3. OPEN JOBS ============ Folder link = Plumbing drive > Jobs > ACTIVE -->
+  <section class="card" id="jobs">
+    <div class="card-head"><h2>OPEN JOBS</h2></div>
+    <div class="jobs-body">
+      <a class="ticket" href="https://script.google.com/a/macros/lakeviewmechanical.com/s/AKfycbyK_zPrUGtIpER4Sqn4XwTGCtVBRKZd-XTls1Ci866ZDZ0Z9pN9vYcLJ8Ww2mdcikXo/exec?go=jobs" target="_blank" rel="noopener"><span class="tico">▣</span>OPEN JOBS<span class="tsub">Call · Map · Photos · Close</span></a>
+      <a class="tfolder" href="https://drive.google.com/drive/folders/1zpZRg5ZqjejHDNozjh4TvLBqZ0RF4xan" target="_blank" rel="noopener">Open folder ↗</a>
+    </div>
+  </section>
+
+  <!-- ============ 4. CALENDAR ============ -->
   <section class="card" id="calendar">
     <div class="card-head"><h2>CALENDAR</h2><span class="muted">Lakeview – Plumbing</span></div>
     <div class="calendar-wrap"><div class="calendar-frame"><iframe id="calframe" loading="lazy" src="https://calendar.google.com/calendar/embed?src=c_cd3f112168498be83ddd772347f1c4e048806df3467ce5b545200aac8bba60b1%40group.calendar.google.com&ctz=America%2FDetroit" title="Lakeview – Plumbing calendar"></iframe></div><div class="cal-foot"><a href="https://calendar.google.com/calendar/embed?src=c_cd3f112168498be83ddd772347f1c4e048806df3467ce5b545200aac8bba60b1%40group.calendar.google.com&ctz=America%2FDetroit" target="_blank" rel="noopener">Open full calendar ↗</a></div></div>
   </section>
 
-  <section class="card" id="chat">
-    <div class="card-head"><h2>TEAM CHAT</h2><span class="muted">Forum style</span></div>
-    <div class="chat-body">
-      <p><b>Each job gets its own space</b> in Google Chat — chat and photo sharing inside, made automatically when a job is created and named after the job number. Open Chat, hit <b>Spaces</b>, and pick your job — or tap <b>Chat</b> on the job card in OPEN JOBS or MY DAY.</p>
-      <a class="btn" href="https://chat.google.com" target="_blank" rel="noopener">OPEN TEAM CHAT →</a>
+  <!-- ============ 5. MORE (collapsed) ============ My Day, Closed (Jobs > COMPLETED), Dig Contract, Team Chat, links.
+       #chat and #links live inside; old links to them open this list. -->
+  <details class="card more" id="more">
+    <summary><h2>MORE</h2><span class="muted">My Day · Closed · Contract · Chat · Links</span><span class="chev" aria-hidden="true">▾</span></summary>
+    <div class="sub">JOBS &amp; TOOLS</div>
+    <div class="link-grid">
+      <a href="https://script.google.com/a/macros/lakeviewmechanical.com/s/AKfycbyK_zPrUGtIpER4Sqn4XwTGCtVBRKZd-XTls1Ci866ZDZ0Z9pN9vYcLJ8Ww2mdcikXo/exec?tech=Justin" target="_blank" rel="noopener"><b>◷ My Day</b><span>Your jobs today and tomorrow</span></a>
+      <a href="https://drive.google.com/drive/folders/1HDy8c8iXwbxf37Qg-9kcKVzkFJFyGMmJ" target="_blank" rel="noopener"><b>✓ Closed</b><span>Finished jobs — closed out</span></a>
+      <a href="contract.html"><b>✎ Dig Contract</b><span>Fill in the sewer dig contract</span></a>
+      <a id="chat" href="https://chat.google.com" target="_blank" rel="noopener"><b>💬 Team Chat</b><span>Each job has its own space — Spaces → job number</span></a>
     </div>
-  </section>
-
-  <section class="card" id="links">
-    <div class="card-head"><h2>LINKS</h2><span class="muted">Quick access</span></div>
+    <div class="sub" id="links">LINKS</div>
     <div class="link-grid">
       <a href="https://www.lakeviewmechanical.com/" target="_blank" rel="noopener"><b>🌐 Our Website</b><span>lakeviewmechanical.com</span></a>
       <a href="https://maps.google.com/?cid=16385320858374077293" target="_blank" rel="noopener"><b>★ Google Reviews</b><span>Our listing on Google</span></a>
@@ -112,22 +116,16 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--olive2);outline-off
       <a href="https://drive.google.com/drive/folders/1J9udcZGPsi60aFmCUfQd13tG_hDgSEsK" target="_blank" rel="noopener"><b>📋 Plumbing Forms</b><span>Forms folder</span></a>
       <a href="https://docs.google.com/spreadsheets/d/1fMn9mLzr66OILMbnfFNksRRj6XWeNKr4uxAdwpwkNYg/edit" target="_blank" rel="noopener"><b>🗂 Job Index</b><span>Every plumbing job</span></a>
       <a href="https://www.yelp.com/biz/lakeview-mechanical-warren-4" target="_blank" rel="noopener"><b>★ Yelp</b><span>Company profile</span></a>
-      <a href="tel:+15867572700"><b>✆ Call Office</b><span>(586) 757-2700 · 24-hr emergency</span></a>
     </div>
-    <div class="qr-card"><img src="qr-reviews.png" alt="QR code — leave Lakeview Mechanical a Google review"><div><b>Happy customer? Show them this.</b><p>They scan it with their phone camera and it opens our Google listing — one tap to leave a review before you pull out of the driveway.</p></div></div>
-  </section>
+    <div class="qr-card"><img src="qr-reviews.png" alt="QR code — leave Lakeview Mechanical a Google review" loading="lazy"><div><b>Happy customer? Show them this.</b><p>They scan it with their phone camera and it opens our Google listing — one tap to leave a review before you pull out of the driveway.</p></div></div>
+  </details>
 
-  <div class="footer">Lakeview Mechanical Team Hub • Built for the field<br>24400 Mound Rd, Warren, MI 48091 • <a href="tel:+15867572700">(586) 757-2700</a></div>
+  <div class="footer">Lakeview Mechanical • 24400 Mound Rd, Warren, MI 48091</div>
 </main>
 </div>
-<nav class="mobile-nav"><a class="active" href="#jobs"><span class="icon">▣</span>Jobs</a><a href="#todaycard"><span class="icon">▦</span>Schedule</a><a class="call" href="tel:+15867572700" aria-label="Call the office"><span class="icon">✆</span>Call</a><a href="#chat"><span class="icon">💬</span>Chat</a><a href="contract.html"><span class="icon">✎</span>Contract</a></nav>
+<nav class="mobile-nav"><a class="active" href="#book"><span class="icon">＋</span>Book</a><a href="#todaycard"><span class="icon">◷</span>Today</a><a class="call" href="tel:+15867572700" aria-label="Call the office"><span class="icon">✆</span>Call</a><a href="#jobs"><span class="icon">▣</span>Jobs</a><a href="#more"><span class="icon">☰</span>More</a></nav>
 <script>
 (function(){
-  // Live date in the top bar
-  var d=new Date();
-  var el=document.getElementById('today');
-  if(el)el.textContent=d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
-
   // Today strip: the Plumbing app's ?view=today page posts its height; Today / Tomorrow switch; refresh when reopened
   var tf=document.getElementById('todayframe'),topen=document.getElementById('todayopen');
   if(tf){
@@ -155,18 +153,26 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--olive2);outline-off
     if(f)f.src=f.src+'&mode=AGENDA';
   }
 
+  // MORE: open the list when More (or an old #chat / #links link) is used
+  var more=document.getElementById('more');
+  function openFor(h){
+    if(!more||!h)return;
+    if(h==='#more'||h==='#chat'||h==='#links'){more.open=true;var t=document.querySelector(h);if(t)setTimeout(function(){t.scrollIntoView({block:'start'});},0);}
+  }
+  openFor(location.hash);
+  window.addEventListener('hashchange',function(){openFor(location.hash);});
+
   // Highlight the section you're on (sidebar + bottom nav)
-  var ids=['links','chat','calendar','todaycard','jobs','home'];
-  var same={todaycard:'sched',calendar:'sched'}; // Today strip + Calendar light up the same nav item (Schedule / Calendar)
+  var ids=['more','jobs','todaycard','book'];
   var navLinks=document.querySelectorAll('.nav a, .mobile-nav a');
   var pinned=null; // section chosen by tapping the nav; wins until the user scrolls manually
   function setActive(id){
-    navLinks.forEach(function(a){var h=(a.getAttribute('href')||'').slice(1);a.classList.toggle('active',h===id||(!!same[id]&&same[h]===same[id]));});
+    navLinks.forEach(function(a){a.classList.toggle('active',(a.getAttribute('href')||'')==='#'+id);});
   }
   navLinks.forEach(function(a){
     a.addEventListener('click',function(){
       var h=a.getAttribute('href');
-      if(h&&h.charAt(0)==='#'){pinned=h.slice(1);setActive(pinned);}
+      if(h&&h.charAt(0)==='#'){pinned=h.slice(1);setActive(pinned);if(h==='#more')openFor(h);}
     });
   });
   ['wheel','touchmove'].forEach(function(ev){
@@ -179,14 +185,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--olive2);outline-off
     requestAnimationFrame(function(){
       ticking=false;
       if(pinned)return;
-      if(window.scrollY<80){setActive(window.innerWidth<700?'jobs':'home');return;}
-      if(window.scrollY+window.innerHeight>=document.body.scrollHeight-8){setActive('links');return;}
+      if(window.scrollY<80){setActive('book');return;}
+      if(window.scrollY+window.innerHeight>=document.body.scrollHeight-8){setActive('more');return;}
       var pos=window.scrollY+window.innerHeight*0.35;
       for(var i=0;i<ids.length;i++){
         var s=document.getElementById(ids[i]);
         if(s&&s.offsetTop<=pos){setActive(ids[i]);return;}
       }
-      setActive('home');
+      setActive('book');
     });
   }
   window.addEventListener('scroll',onScroll,{passive:true});
